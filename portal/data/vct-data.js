@@ -3,11 +3,11 @@ window.VCT_DATA = {
  "meta": {
   "company": "VConnecTech Systems",
   "source": "Copy of VCT_Sector_Operating_Model.xlsx",
-  "sourceModified": "2026-10-05T15:12:42",
+  "sourceModified": "2026-10-06T10:53:58",
   "lastModifiedBy": "BHANU PRAKASH KAUTHARAPU",
-  "generatedAt": "2026-10-06T09:33:50",
+  "generatedAt": "2026-10-06T10:54:03",
   "mode": "live",
-  "version": 1
+  "version": 2
  },
  "sectors": [
   {
@@ -516,7 +516,7 @@ window.VCT_DATA = {
   },
   {
    "id": "VC_242",
-   "name": "Kiranmai Battu 1",
+   "name": "Kiranmai Battu",
    "sector": "Services",
    "project": "ApexFlo",
    "projectRaw": "ApexFlo",

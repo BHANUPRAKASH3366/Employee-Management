@@ -757,7 +757,7 @@
     const kids = (e) => H.children.get(e.id);
     const isMgr = (e) => kids(e).length > 0;
     const ROLLUP = 8; // with this many or more people without a team, show them as one "N others" box
-    const mode = ["line", "domain", "billing"].includes(state.hierMode) ? state.hierMode : "line";
+    const mode = ["line", "sector", "domain", "billing"].includes(state.hierMode) ? state.hierMode : "line";
     const isDual = (e) => !!(e.second && e.second.isSeparateAssignment);
     const billOf = (e) => e.billing || "Not set";
     const domOf = (e) => e.domain || "Not specified";
@@ -765,11 +765,11 @@
     // A person's box: filled with their billing colour; two-project people are half billing colour, half violet.
     const box = (e, opts) => {
       opts = opts || {};
-      const n = mode === "line" ? kids(e).length : 0;
+      const n = opts.n !== undefined ? opts.n : mode === "line" ? kids(e).length : 0;
       const b = billOf(e), dual = isDual(e);
       const cls = ["ocb", "bx", "bx-" + bcls(b), dual ? "dual" : "", opts.root ? "root" : "", opts.sel ? "sel" : "", n ? "mgr" : "", e.id === state.hierFocus ? "hl" : ""].join(" ");
       const tip = esc(e.name) + " — " + esc(b) + (dual ? " · two projects" : "") + (n ? " · click to show the team" : " · click for profile");
-      return `<div class="${cls}" data-${n && !opts.root ? "open" : "emp"}="${esc(e.id)}" title="${tip}">
+      return `<div class="${cls}" data-${n && !opts.root ? (opts.openAttr || "open") : "emp"}="${esc(e.id)}" title="${tip}">
         <b>${esc(e.name)}</b><small>${esc(opts.sub || e.designation || e.level || "")}</small>
         ${n ? `<span class="ocn">${opts.root ? n + " direct reports" : n}</span>` : ""}
         ${opts.note ? `<em>${esc(opts.note)}</em>` : ""}</div>`;
@@ -777,8 +777,17 @@
 
     const legend = `<div class="pg-legend hm-legend">${M.BILLING.map((b) => `<span class="pg-key ${bcls(b)}">${esc(b)}</span>`).join("")}<span class="pg-key dual">Working on 2 projects (left half = billing)</span></div>`;
     const switcher = `<div class="hm-tabs" role="tablist">
-      ${[["line", "Reporting line"], ["domain", "Domain × billing"], ["billing", "Billing only"]].map(([k, l]) =>
+      ${[["line", "Reporting line"], ["sector", "Sector-wise"], ["domain", "Domain × billing"], ["billing", "Billing only"]].map(([k, l]) =>
         `<button type="button" class="hm-tab${mode === k ? " on" : ""}" data-hmode="${k}">${l}</button>`).join("")}</div>`;
+
+    // Billing mix of a group as a thin stacked bar.
+    const bar = (list) => {
+      const n = list.length || 1;
+      return `<span class="hb-bar">${M.BILLING.map((b) => {
+        const c = list.filter((e) => billOf(e) === b).length;
+        return c ? `<i class="bx-${bcls(b)}" style="width:${(c / n) * 100}%" title="${esc(b)}: ${c}"></i>` : "";
+      }).join("")}</span>`;
+    };
 
     let html = "", path = [];
     if (mode === "line") {
@@ -824,6 +833,76 @@
         html += `<div class="ocv sel${cur}"></div><div class="oct${cur}">Team of <b>${esc(m.name)}</b> · ${kids(m).length}</div>`;
         html += group(kids(m), path[i + 1], m.id, cur);
       });
+    } else if (mode === "sector") {
+      // Sector-wise: company → sectors → reporting line inside the selected sector (primary sector).
+      // Top of a sector = people whose manager is in another sector (or who have none).
+      const emps = DATA.employees;
+      const secOf = (e) => e.sector || "Not specified";
+      const counts = new Map();
+      emps.forEach((e) => counts.set(secOf(e), (counts.get(secOf(e)) || 0) + 1));
+      const info = new Map(sectorList().map((s) => [s.name, s]));
+      const keys = sectorList().map((s) => s.name).filter((k) => counts.get(k))
+        .concat([...counts.keys()].filter((k) => !info.has(k)));
+      state.hierGroup = state.hierGroup || {};
+      state.hierSecPath = state.hierSecPath || {};
+      if (state.hierFocus) { const t = employeeById(state.hierFocus); if (t) state.hierGroup.sector = secOf(t); }
+      if (!keys.includes(state.hierGroup.sector)) state.hierGroup.sector = keys[0];
+      const sel = state.hierGroup.sector;
+
+      const members = emps.filter((e) => secOf(e) === sel);
+      const inSec = new Set(members.map((e) => e.id));
+      const skids = (e) => kids(e).filter((k) => inSec.has(k.id));
+      const sMgr = (e) => skids(e).length > 0;
+      const outParent = (e) => { const p = H.parent.get(e.id); return p && !inSec.has(p.id) ? p : null; };
+      const byTeam = (a, b) => skids(b).length - skids(a).length || a.name.localeCompare(b.name);
+      const roots = members.filter((e) => { const p = H.parent.get(e.id); return !p || !inSec.has(p.id); }).sort(byTeam);
+
+      // Coming from search / a profile: open the in-sector path down to that person.
+      if (state.hierFocus && inSec.has(state.hierFocus)) {
+        const t = employeeById(state.hierFocus), up = [];
+        for (let x = H.parent.get(t.id); x && inSec.has(x.id); x = H.parent.get(x.id)) up.unshift(x.id);
+        state.hierSecPath[sel] = up.concat(sMgr(t) ? [t.id] : []);
+      }
+      for (const id of state.hierSecPath[sel] || []) {
+        const e = employeeById(id);
+        const allowed = path.length ? skids(path[path.length - 1]) : roots;
+        if (!e || !allowed.includes(e) || !sMgr(e)) break;
+        path.push(e);
+      }
+      state.hierSecPath[sel] = path.map((e) => e.id);
+
+      const sbox = (e, opts) => box(e, Object.assign({ n: skids(e).length, openAttr: "sopen" }, opts));
+      const sgroup = (list, selected, levelKey, cur, top) => {
+        const mgrs = list.filter(sMgr);
+        const others = list.filter((e) => !sMgr(e));
+        const rollup = mgrs.length && others.length >= ROLLUP && !(state.hierShowOthers || new Set()).has(levelKey);
+        const note = (e) => (top && outParent(e) ? "Reports to " + outParent(e).name + " (" + secOf(outParent(e)) + ")" : "");
+        return `<div class="ocw${cur || ""}"><div class="ocr">
+          ${mgrs.map((e) => sbox(e, { sel: selected === e, note: note(e) })).join("")}
+          ${rollup ? `<div class="ocb more" data-others="${esc(levelKey)}"><b>${others.length} others</b><small>no team · click to show</small></div>`
+                   : others.map((e) => sbox(e, { note: note(e) })).join("")}
+        </div></div>`;
+      };
+      const head = (k) => String((info.get(k) || {}).head || "").replace(/\s*\(.*\)\s*$/, "");
+      const gbox = (k) => {
+        const list = emps.filter((e) => secOf(e) === k);
+        return `<div class="ocb grp${k === sel ? " sel" : ""}" data-grp="${esc(k)}" title="Show the reporting line inside ${esc(k)}" style="border-top:4px solid ${sectorColor(k)}">
+          <b>${esc(k)}</b><small>${head(k) ? "Head: " + esc(head(k)) : "No sector head"}</small>${bar(list)}<span class="ocn">${list.length}</span></div>`;
+      };
+      const summary = M.BILLING.map((b) => [b, members.filter((e) => billOf(e) === b).length]).filter((x) => x[1]).map(([b, c]) => `${esc(b)} ${c}`).join(" · ");
+
+      html += `<div class="ocl"><div class="ocb root"><b>${esc((DATA.meta && DATA.meta.company) || "All employees")}</b><small>by sector, then reporting line</small><span class="ocn">${emps.length} people</span></div></div><div class="ocv"></div>`;
+      html += `<div class="ocw"><div class="ocr">${keys.map(gbox).join("")}</div></div>`;
+      if (sel) {
+        const cur0 = path.length ? "" : " cur";
+        html += `<div class="ocv sel${cur0}"></div><div class="oct${cur0}"><b>${esc(sel)}</b> · ${members.length} people${summary ? ` <span class="${cur0 ? "" : "muted"}">— ${summary}</span>` : ""}</div>`;
+        html += sgroup(roots, path[0], "sec:" + sel + ":root", cur0, true);
+        path.forEach((m, i) => {
+          const cur = i === path.length - 1 ? " cur" : "";
+          html += `<div class="ocv sel${cur}"></div><div class="oct${cur}">Team of <b>${esc(m.name)}</b> in ${esc(sel)} · ${skids(m).length}</div>`;
+          html += sgroup(skids(m), path[i + 1], "sec:" + sel + ":" + m.id, cur);
+        });
+      }
     } else {
       // Grouped views: company → groups → people of the selected group.
       const emps = DATA.employees;
@@ -837,13 +916,6 @@
       if (!keys.includes(state.hierGroup[mode])) state.hierGroup[mode] = keys[0];
       const sel = state.hierGroup[mode];
 
-      const bar = (list) => {
-        const n = list.length || 1;
-        return `<span class="hb-bar">${M.BILLING.map((b) => {
-          const c = list.filter((e) => billOf(e) === b).length;
-          return c ? `<i class="bx-${bcls(b)}" style="width:${(c / n) * 100}%" title="${esc(b)}: ${c}"></i>` : "";
-        }).join("")}</span>`;
-      };
       const gbox = (k) => {
         const list = emps.filter((e) => keyOf(e) === k);
         const on = k === sel ? " sel" : "";
@@ -878,7 +950,7 @@
           ${switcher}
           <input type="search" id="hSearch" placeholder="Find a person…" autocomplete="off" list="hNames">
           <datalist id="hNames">${DATA.employees.map((e) => `<option value="${esc(e.name)}">`).join("")}</datalist>
-          ${mode === "line" && path.length ? `<a href="javascript:void 0" id="hReset" class="org-links">↑ Back to top</a>` : ""}
+          ${(mode === "line" || mode === "sector") && path.length ? `<a href="javascript:void 0" id="hReset" class="org-links">↑ Back to top</a>` : ""}
         </div>
         ${legend}
         <div class="oc">${html}</div>
@@ -907,6 +979,16 @@
       state.hierFocus = null;
       render({ keepView: true });
     }));
+    v.querySelectorAll("[data-sopen]").forEach((el) => el.addEventListener("click", () => {
+      // Sector-wise: depth = how many in-sector managers sit above this person.
+      const e = employeeById(el.dataset.sopen), sec = state.hierGroup.sector;
+      const sp = state.hierSecPath[sec] || [];
+      let depth = 0;
+      for (let x = H.parent.get(e.id); x && (x.sector || "Not specified") === sec; x = H.parent.get(x.id)) depth++;
+      state.hierSecPath[sec] = sp[depth] === e.id ? sp.slice(0, depth) : sp.slice(0, depth).concat([e.id]); // click again to close
+      state.hierFocus = null;
+      render({ keepView: true });
+    }));
     v.querySelectorAll("[data-emp]").forEach((el) => el.addEventListener("click", () => openEmployee(el.dataset.emp)));
     v.querySelectorAll("[data-others]").forEach((el) => el.addEventListener("click", () => {
       state.hierShowOthers = state.hierShowOthers || new Set();
@@ -914,7 +996,12 @@
       render({ keepView: true });
     }));
     const reset = $("hReset");
-    if (reset) reset.addEventListener("click", () => { state.hierPath = []; state.hierFocus = null; render({ keepView: true }); });
+    if (reset) reset.addEventListener("click", () => {
+      if (mode === "sector") state.hierSecPath[state.hierGroup.sector] = [];
+      else state.hierPath = [];
+      state.hierFocus = null;
+      render({ keepView: true });
+    });
     const out = $("hOutside");
     if (out) out.addEventListener("click", () => { state.hierOutside = !state.hierOutside; render({ keepView: true }); });
     $("hSearch").addEventListener("change", (ev) => {
@@ -927,6 +1014,12 @@
         // Show all of the team the person sits in, so they're visible even when grouped under "N others".
         const parent = H.parent.get(e.id);
         if (parent) { state.hierShowOthers = state.hierShowOthers || new Set(); state.hierShowOthers.add(parent.id); }
+      } else if (mode === "sector") {
+        // Unfold the "N others" box the person may be hidden in (top of sector or their manager's team).
+        const sec = e.sector || "Not specified", parent = H.parent.get(e.id);
+        state.hierShowOthers = state.hierShowOthers || new Set();
+        state.hierShowOthers.add("sec:" + sec + ":root");
+        if (parent) state.hierShowOthers.add("sec:" + sec + ":" + parent.id);
       }
       state.hierFocus = e.id;
       render({ keepView: true });

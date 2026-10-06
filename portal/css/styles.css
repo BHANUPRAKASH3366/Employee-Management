@@ -573,6 +573,10 @@ table.matrix tr.mx-on td.first { color: var(--brand); font-weight: 700; }
 
 /* alerts — attendance tab */
 .al-tabs { margin: 0 0 16px; }
+/* Excel edits / Attendance: the inactive tab must still look like a button */
+.al-tabs .tab { border: 1.5px solid transparent; padding: 8px 18px; }
+.al-tabs .tab:not(.on) { background: #fff; border-color: #9fb0c6; color: var(--brand); box-shadow: 0 1px 3px rgba(15, 27, 45, .12); }
+.al-tabs .tab:not(.on):hover { background: var(--brand-50); border-color: var(--brand); box-shadow: 0 2px 6px rgba(15, 27, 45, .18); }
 .att-mail { display: flex; align-items: center; gap: 14px; justify-content: space-between; flex-wrap: wrap; padding: 12px 16px; font-size: 13.5px; }
 .att-mail .btn[disabled] { opacity: .5; cursor: default; }
 .att-filt { display: flex; gap: 6px; flex-wrap: wrap; margin: 0 0 10px; }
