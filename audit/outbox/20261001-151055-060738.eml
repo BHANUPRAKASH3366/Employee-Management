@@ -1,0 +1,80 @@
+Subject: [VCT Portal] Employee data edited by BHANU PRAKASH KAUTHARAPU 
+ =?utf-8?b?4oCU?= 1 change
+From: vct-portal@localhost
+To: hr (not configured)
+Date: Thu, 01 Oct 2026 15:10:55 +0530
+Message-ID: <179084765506.19996.11779705835886595372@vct-portal>
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="===============5647085263813672421=="
+
+--===============5647085263813672421==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+The live employee workbook was edited.
+
+WHO EDITED
+  Name:          =E2=80=94 not identified =E2=80=94
+  Employee ID:   =E2=80=94
+  Email:         =E2=80=94 not on record =E2=80=94
+  Recorded as:   BHANU PRAKASH KAUTHARAPU  (Name not found in the employee ro=
+ster or editors.json.)
+  Saved at:      01 Oct 2026, 03:10:28 PM
+  File:          Copy of VCT_Sector_Operating_Model.xlsx
+
+CHANGED  VC_242 =E2=80=94 Kiranmai Battu
+    Project: ApexFlo  =E2=86=92  AMD
+
+Alerts: http://localhost:8765/#/changes
+
+--===============5647085263813672421==
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+<div style=3D"font-family:Segoe UI,Arial,sans-serif;color:#0f1b2d;max-width:7=
+60px">
+<div style=3D"background:#060b14;color:#fff;padding:14px 18px;border-radius:1=
+0px 10px 0 0"><b>VConnecTech Systems</b> =C2=B7 Employee Portal alert</div>
+<div style=3D"border:1px solid #e3e8f0;border-top:0;padding:18px;border-radiu=
+s:0 0 10px 10px">
+<p style=3D"margin:0 0 12px">The live employee workbook was edited =E2=80=94 =
+<b>1 change</b>.</p>
+<table style=3D"border-collapse:collapse;font-size:14px;margin-bottom:16px">
+<tr><td style=3D"color:#7b879b;padding:3px 14px 3px 0">Edited by</td><td><b>=
+=E2=80=94 not identified =E2=80=94</b></td></tr>
+<tr><td style=3D"color:#7b879b;padding:3px 14px 3px 0">Employee ID</td><td>=
+=E2=80=94</td></tr>
+<tr><td style=3D"color:#7b879b;padding:3px 14px 3px 0">Email</td><td>=E2=80=
+=94 not on record =E2=80=94</td></tr>
+<tr><td style=3D"color:#7b879b;padding:3px 14px 3px 0">Recorded as</td><td>BH=
+ANU PRAKASH KAUTHARAPU <span style=3D"color:#7b879b">(Name not found in the e=
+mployee roster or editors.json.)</span></td></tr>
+<tr><td style=3D"color:#7b879b;padding:3px 14px 3px 0">Saved at</td><td>01 Oc=
+t 2026, 03:10:28 PM</td></tr>
+<tr><td style=3D"color:#7b879b;padding:3px 14px 3px 0">File</td><td>Copy of V=
+CT_Sector_Operating_Model.xlsx</td></tr>
+</table>
+<p style=3D"background:#fef4e2;color:#8a4b00;padding:8px 12px;border-radius:8=
+px;font-size:13px">The editor could not be matched to an employee. Check the =
+name above, or add it to editors.json.</p>
+
+<table style=3D"border-collapse:collapse;width:100%;font-size:13px">
+<tr style=3D"background:#f4f6fb;text-align:left"><th style=3D"padding:8px;bor=
+der-bottom:1px solid #e3e8f0">Record</th><th style=3D"padding:8px;border-bott=
+om:1px solid #e3e8f0">Field</th><th style=3D"padding:8px;border-bottom:1px so=
+lid #e3e8f0">Before</th><th style=3D"padding:8px;border-bottom:1px solid #e3e=
+8f0">After</th></tr>
+<tr><td style=3D"padding:8px;border-bottom:1px solid #eef1f6">VC_242 =E2=80=
+=94 Kiranmai Battu</td><td style=3D"padding:8px;border-bottom:1px solid #eef1=
+f6">Project</td><td style=3D"padding:8px;border-bottom:1px solid #eef1f6;colo=
+r:#be123c">ApexFlo</td><td style=3D"padding:8px;border-bottom:1px solid #eef1=
+f6;color:#15803d"><b>AMD</b></td></tr>
+</table>
+
+<p style=3D"margin-top:16px"><a href=3D"http://localhost:8765/#/changes">Open=
+ Alerts in the portal</a></p>
+</div></div>
+
+--===============5647085263813672421==--

@@ -1,0 +1,3 @@
+{
+  "_how": "Map the name Excel records as 'Last modified by' (or a login/email) to an employee ID, for anyone whose Office name differs from their name in Headcount Data. Example: \"kauth\": \"VC_242\""
+}

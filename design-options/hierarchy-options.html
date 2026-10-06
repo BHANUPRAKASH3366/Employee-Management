@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hierarchy Design Options</title>
+<style>
+  :root { --brand: #006edb; --brand-50: #e8f2fd; --ink: #0f1b2d; --ink-2: #44526a; --ink-3: #7b879b; --line: #e3e8f0; --line-2: #eef1f6; --bg: #f4f6fb; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Segoe UI", system-ui, Arial, sans-serif; color: var(--ink); background: var(--bg); font-size: 14px; }
+  header { padding: 22px 32px 6px; }
+  header h1 { margin: 0; font-size: 22px; }
+  header p { margin: 4px 0 0; color: var(--ink-2); }
+  .opt { margin: 22px 32px; background: #fff; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+  .opt-h { display: flex; align-items: baseline; gap: 12px; padding: 14px 20px; border-bottom: 1px solid var(--line); background: #fbfcfe; }
+  .opt-h .letter { width: 30px; height: 30px; border-radius: 8px; background: var(--brand); color: #fff; display: grid; place-items: center; font-weight: 800; align-self: center; }
+  .opt-h h2 { margin: 0; font-size: 17px; }
+  .opt-h span { color: var(--ink-3); }
+  .stage { padding: 22px; overflow-x: auto; }
+  .muted { color: var(--ink-3); }
+  .n { font-size: 12px; font-weight: 700; color: var(--ink-2); background: var(--line-2); border-radius: 99px; padding: 1px 8px; }
+
+  /* A — top-down org chart */
+  .A { display: flex; flex-direction: column; align-items: center; min-width: 1000px; }
+  .box { border: 1px solid var(--line); border-radius: 10px; padding: 8px 12px; background: #fff; text-align: center; min-width: 150px; cursor: pointer; }
+  .box b { display: block; font-size: 13.5px; }
+  .box small { color: var(--ink-3); font-size: 12px; }
+  .box .n { display: inline-block; margin-top: 4px; }
+  .box.root { border: 2px solid var(--brand); min-width: 200px; }
+  .box.sel { border: 2px solid var(--brand); background: var(--brand-50); }
+  .vline { width: 2px; height: 20px; background: #cfd7e3; }
+  .row { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; position: relative; padding-top: 20px; border-top: 2px solid #cfd7e3; max-width: 1100px; }
+  .row .box { position: relative; }
+  .row { border-top: 0; padding-top: 0; }
+  .row-wrap { border: 2px solid #e3e8f0; border-radius: 12px; padding: 14px; background: #fbfcfe; }
+  .box.more { border-style: dashed; color: var(--ink-2); }
+
+  /* B — column navigator */
+  .B { display: flex; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; min-width: 900px; }
+  .col { width: 300px; border-right: 1px solid var(--line); max-height: 460px; overflow-y: auto; }
+  .col:last-child { border-right: 0; flex: 1; }
+  .col h4 { margin: 0; padding: 10px 14px; font-size: 11.5px; text-transform: uppercase; letter-spacing: .05em; color: var(--ink-3); background: #fbfcfe; border-bottom: 1px solid var(--line-2); position: sticky; top: 0; }
+  .it { display: flex; align-items: center; gap: 8px; padding: 8px 14px; border-bottom: 1px solid var(--line-2); cursor: pointer; }
+  .it:hover { background: #f5f8fc; }
+  .it.sel { background: var(--brand); color: #fff; }
+  .it.sel small, .it.sel .n { color: #fff; background: rgba(255,255,255,.2); }
+  .it div { min-width: 0; flex: 1; }
+  .it b { display: block; font-size: 13.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .it small { color: var(--ink-3); font-size: 12px; }
+  .it .chev { color: var(--ink-3); }
+  .it.sel .chev { color: #fff; }
+  .crumb { margin-bottom: 10px; color: var(--ink-2); }
+  .crumb b { color: var(--ink); }
+
+  /* C — team cards */
+  .C-boss { border: 2px solid var(--brand); border-radius: 12px; padding: 12px 16px; margin-bottom: 14px; display: flex; gap: 14px; align-items: baseline; }
+  .C { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
+  .team { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+  .team-h { padding: 10px 14px; background: #fbfcfe; border-bottom: 1px solid var(--line); display: flex; gap: 8px; align-items: baseline; }
+  .team-h b { font-size: 14px; }
+  .team-h .n { margin-left: auto; }
+  .team ul { list-style: none; margin: 0; padding: 6px 0; }
+  .team li { padding: 4px 14px; font-size: 13px; display: flex; gap: 8px; }
+  .team li span { color: var(--ink-3); font-size: 12px; margin-left: auto; white-space: nowrap; }
+
+  /* D — left-to-right tree */
+  .D { display: flex; align-items: center; gap: 0; min-width: 980px; }
+  .D .node { border: 1px solid var(--line); border-radius: 9px; padding: 6px 10px; background: #fff; white-space: nowrap; font-size: 13px; cursor: pointer; }
+  .D .node small { color: var(--ink-3); margin-left: 6px; }
+  .D .node.root { border: 2px solid var(--brand); padding: 10px 14px; font-weight: 700; }
+  .D .node.sel { border: 2px solid var(--brand); background: var(--brand-50); }
+  .D .stack { display: flex; flex-direction: column; gap: 6px; position: relative; padding-left: 26px; }
+  .D .stack::before { content: ""; position: absolute; left: 12px; top: 14px; bottom: 14px; border-left: 2px solid #cfd7e3; }
+  .D .stack > .node { position: relative; }
+  .D .stack > .node::before { content: ""; position: absolute; left: -14px; top: 50%; width: 14px; border-top: 2px solid #cfd7e3; }
+  .D .link { width: 26px; border-top: 2px solid #cfd7e3; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Reporting Hierarchy — choose a design</h1>
+  <p>Four layouts built from the real “Reports To” data. Each shows only name, designation and team size. Click names to try them.</p>
+</header>
+
+<section class="opt" id="optA"><div class="opt-h"><span class="letter">A</span><h2>Org chart (top-down)</h2><span>Classic boxes and lines — manager on top, team below. Click a manager to show their team.</span></div><div class="stage"><div class="A" id="A"></div></div></section>
+<section class="opt" id="optB"><div class="opt-h"><span class="letter">B</span><h2>Column navigator</h2><span>Like a file browser — click a manager and their team opens in the next column.</span></div><div class="stage"><div id="B"></div></div></section>
+<section class="opt" id="optC"><div class="opt-h"><span class="letter">C</span><h2>Team cards</h2><span>Every manager is a card listing exactly who reports to them.</span></div><div class="stage"><div id="C"></div></div></section>
+<section class="opt" id="optD"><div class="opt-h"><span class="letter">D</span><h2>Sideways tree</h2><span>Left to right — top person, then managers, then the selected manager’s team.</span></div><div class="stage"><div class="D" id="D"></div></div></section>
+
+<script src="../portal/data/vct-data.js"></script>
+<script src="../portal/js/metrics.js"></script>
+<script>
+  const E = window.VCT_DATA.employees;
+  const H = VCTMetrics.hierarchy(E);
+  const boss = H.tops[0];
+  const kids = (e) => H.children.get(e.id);
+  const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const des = (e) => esc(e.designation || e.level || "");
+  const managersOf = (e) => kids(e).filter((k) => kids(k).length);
+  const icsOf = (e) => kids(e).filter((k) => !kids(k).length);
+
+  // A — org chart
+  let selA = managersOf(boss)[0];
+  function drawA() {
+    const ms = managersOf(boss), ics = icsOf(boss);
+    document.getElementById("A").innerHTML = `
+      <div class="box root"><b>${esc(boss.name)}</b><small>${des(boss)}</small><br><span class="n">${kids(boss).length} direct reports</span></div>
+      <div class="vline"></div>
+      <div class="row-wrap"><div class="row">${ms.map((m) => `<div class="box${m === selA ? " sel" : ""}" data-a="${m.id}"><b>${esc(m.name)}</b><small>${des(m)}</small><br><span class="n">${kids(m).length}</span></div>`).join("")}
+        <div class="box more" data-a="__ics"><b>${ics.length} others</b><small>report directly</small></div></div></div>
+      <div class="vline"></div>
+      <div class="muted" style="margin:2px 0 8px">${selA === "__ics" ? "Direct reports of " + esc(boss.name) + " with no team" : "Team of <b>" + esc(selA.name) + "</b>"}</div>
+      <div class="row-wrap"><div class="row">${(selA === "__ics" ? ics : kids(selA)).map((k) => `<div class="box"><b>${esc(k.name)}</b><small>${des(k)}</small>${kids(k).length ? `<br><span class="n">${kids(k).length}</span>` : ""}</div>`).join("")}</div></div>`;
+    document.querySelectorAll("[data-a]").forEach((el) => el.onclick = () => { selA = el.dataset.a === "__ics" ? "__ics" : E.find((x) => x.id === el.dataset.a); drawA(); });
+  }
+
+  // B — columns
+  let pathB = [boss, managersOf(boss)[0]];
+  function drawB() {
+    const cols = pathB.map((p, i) => {
+      const list = kids(p);
+      return `<div class="col"><h4>${i === 0 ? "Reports to " : "Team of "}${esc(p.name)} · ${list.length}</h4>${list.map((k) => `
+        <div class="it${pathB[i + 1] === k ? " sel" : ""}" data-b="${k.id}" data-lvl="${i}"><div><b>${esc(k.name)}</b><small>${des(k)}</small></div>${kids(k).length ? `<span class="n">${kids(k).length}</span><span class="chev">›</span>` : ""}</div>`).join("")}</div>`;
+    });
+    document.getElementById("B").innerHTML = `<div class="crumb">${pathB.map((p) => `<b>${esc(p.name)}</b>`).join(" › ")}</div><div class="B"><div class="col"><h4>Top</h4><div class="it sel"><div><b>${esc(boss.name)}</b><small>${des(boss)}</small></div><span class="n">${kids(boss).length}</span><span class="chev">›</span></div></div>${cols.join("")}</div>`;
+    document.querySelectorAll("[data-b]").forEach((el) => el.onclick = () => {
+      const e = E.find((x) => x.id === el.dataset.b);
+      pathB = pathB.slice(0, +el.dataset.lvl + 1);
+      if (kids(e).length) pathB.push(e);
+      drawB();
+    });
+  }
+
+  // C — team cards
+  function drawC() {
+    const ics = icsOf(boss);
+    const managers = H.managers.filter((m) => m !== boss).sort((a, b) => kids(b).length - kids(a).length);
+    document.getElementById("C").innerHTML = `
+      <div class="C-boss"><b style="font-size:16px">${esc(boss.name)}</b><span class="muted">${des(boss)}</span><span class="n" style="margin-left:auto">${kids(boss).length} direct reports</span></div>
+      <div class="C">${managers.map((m) => `<div class="team"><div class="team-h"><b>${esc(m.name)}</b><span class="muted" style="font-size:12px">${des(m)}</span><span class="n">${kids(m).length}</span></div>
+        <ul>${kids(m).map((k) => `<li>${esc(k.name)}<span>${des(k)}</span></li>`).join("")}</ul></div>`).join("")}
+        <div class="team"><div class="team-h"><b>Direct to ${esc(boss.name)}</b><span class="n">${ics.length}</span></div><ul>${ics.map((k) => `<li>${esc(k.name)}<span>${des(k)}</span></li>`).join("")}</ul></div>
+      </div>`;
+  }
+
+  // D — sideways tree
+  let selD = managersOf(boss)[0];
+  function drawD() {
+    const ms = managersOf(boss);
+    document.getElementById("D").innerHTML = `
+      <div class="node root">${esc(boss.name)}<small>${des(boss)} · ${kids(boss).length}</small></div><div class="link"></div>
+      <div class="stack">${ms.map((m) => `<div class="node${m === selD ? " sel" : ""}" data-d="${m.id}">${esc(m.name)}<small>${des(m)} · ${kids(m).length}</small></div>`).join("")}
+        <div class="node" style="border-style:dashed">+ ${icsOf(boss).length} others<small>no team</small></div></div>
+      <div class="link"></div>
+      <div class="stack">${kids(selD).map((k) => `<div class="node">${esc(k.name)}<small>${des(k)}</small></div>`).join("")}</div>`;
+    document.querySelectorAll("[data-d]").forEach((el) => el.onclick = () => { selD = E.find((x) => x.id === el.dataset.d); drawD(); });
+  }
+
+  drawA(); drawB(); drawC(); drawD();
+</script>
+</body>
+</html>

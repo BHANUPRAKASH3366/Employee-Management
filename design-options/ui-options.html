@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portal Style Options</title>
+<style>
+  :root { --brand: #006edb; --ink: #0f1b2d; --ink-2: #44526a; --ink-3: #7b879b; --line: #e3e8f0; --bg: #f4f6fb; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Segoe UI", system-ui, Arial, sans-serif; color: var(--ink); background: var(--bg); }
+  header { padding: 24px 32px 4px; }
+  h1 { margin: 0; font-size: 22px; }
+  header p { margin: 6px 0 0; color: var(--ink-2); }
+  .opt { margin: 20px 32px; background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; }
+  .opt-h { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+  .num { width: 32px; height: 32px; border-radius: 9px; background: var(--brand); color: #fff; display: grid; place-items: center; font-weight: 800; }
+  .opt-h h2 { margin: 0; font-size: 18px; }
+  .opt-h .what { color: var(--ink-2); flex: 1; min-width: 260px; }
+  .try { padding: 8px 14px; border-radius: 8px; background: var(--brand); color: #fff; text-decoration: none; font-weight: 600; white-space: nowrap; }
+  .shots { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+  .shots a { display: block; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+  .shots img { width: 100%; display: block; }
+  .shots span { display: block; font-size: 12px; color: var(--ink-3); padding: 6px 10px; border-top: 1px solid var(--line); background: #fbfcfe; }
+  ul { margin: 8px 0 0; padding-left: 18px; color: var(--ink-2); font-size: 13.5px; }
+  @media (max-width: 900px) { .shots { grid-template-columns: 1fr; } .opt, header { margin-left: 16px; margin-right: 16px; padding-left: 16px; padding-right: 16px; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Portal style — choose one</h1>
+  <p>The same portal and data in four styles. Click a picture to enlarge it, or <b>Try it live</b> (the live portal must be running).</p>
+</header>
+<main id="list"></main>
+<script>
+  const OPTIONS = [
+    { key: "midnight", n: "1-Midnight", name: "Midnight (current)", what: "Dark sidebar with the full logo, white cards with a coloured edge, square-cornered buttons.",
+      points: ["Logo shown full size on dark background", "Strong contrast between menu and content", "What you have today"] },
+    { key: "cloud", n: "2-Cloud", name: "Cloud", what: "Light, airy look: white sidebar, soft floating cards, rounded pill buttons and inputs.",
+      points: ["Feels lighter and more modern", "Coloured bar on top of each number card", "Pill-shaped buttons, filters and tabs"] },
+    { key: "horizon", n: "3-Horizon", name: "Horizon", what: "Menu moves to a dark bar across the top; content uses the full width; outlined buttons.",
+      points: ["More room for charts and tables", "Live status shown in the top bar", "Outlined blue buttons that fill on hover"] },
+    { key: "pulse", n: "4-Pulse", name: "Pulse", what: "Slim icon menu with your V logo mark, a blue gradient page header, rounded cards and bold filled buttons.",
+      points: ["Most space for content", "Branded blue header on every page", "Gradient primary buttons, tinted secondary buttons"] },
+  ];
+  document.getElementById("list").innerHTML = OPTIONS.map((o, i) => `
+    <section class="opt">
+      <div class="opt-h"><span class="num">${i + 1}</span><h2>${o.name}</h2><span class="what">${o.what}</span>
+        <a class="try" href="http://localhost:8765/?ui=${o.key}#/dashboard" target="_blank">Try it live →</a></div>
+      <div class="shots">${["Dashboard", "Sector", "KPI"].map((t) => `<a href="UI-${o.n}-${t}.png" target="_blank"><img src="UI-${o.n}-${t}.png" alt="${o.name} — ${t}"><span>${t === "Sector" ? "Sector page" : t === "KPI" ? "KPI Framework (tabs)" : "Dashboard"}</span></a>`).join("")}</div>
+      <ul>${o.points.map((p) => `<li>${p}</li>`).join("")}</ul>
+    </section>`).join("");
+</script>
+</body>
+</html>

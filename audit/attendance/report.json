@@ -1,0 +1,3639 @@
+{
+ "source": "HRMS File (1).xlsx",
+ "sheet": "Early_Late Report(Decimal)",
+ "periodFrom": "2026-08-01",
+ "periodTo": "2026-08-31",
+ "periodLabel": "August 2026",
+ "rules": {
+  "minHoursPerDay": 8.0,
+  "minDaysPerMonth": 20,
+  "match": "any"
+ },
+ "employees": 135,
+ "workingDatesInFile": 29,
+ "flaggedCount": 96,
+ "shortHoursCount": 69,
+ "fewDaysCount": 65,
+ "people": [
+  {
+   "id": "VC_199",
+   "name": "Keerthi Teleti",
+   "email": "finance@vconnectech.in",
+   "daysPresent": 1,
+   "totalHours": 0,
+   "avgHours": 0.0,
+   "shortDays": [
+    {
+     "date": "2026-08-11",
+     "in": "08:44 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    }
+   ],
+   "rules": [
+    "short-hours",
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_133",
+   "name": "Vaheed Pasha Mahammad",
+   "email": "vaheed.mahammad@vconnectech.in",
+   "daysPresent": 8,
+   "totalHours": 70.36,
+   "avgHours": 8.79,
+   "shortDays": [
+    {
+     "date": "2026-08-11",
+     "in": "09:56 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    }
+   ],
+   "rules": [
+    "short-hours",
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_123",
+   "name": "Pravallika bhimineni",
+   "email": "pravallika.bhimineni@vconnectech.in",
+   "daysPresent": 10,
+   "totalHours": 75.6,
+   "avgHours": 7.56,
+   "shortDays": [
+    {
+     "date": "2026-08-18",
+     "in": "09:25 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-19",
+     "in": "10:17 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-21",
+     "in": "09:49 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-25",
+     "in": "08:21 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-26",
+     "in": "10:01 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-28",
+     "in": "11:29 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    }
+   ],
+   "rules": [
+    "short-hours",
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "ZMD_105",
+   "name": "Karthick PS",
+   "email": "karthick.ps@zmd.tech",
+   "daysPresent": 11,
+   "totalHours": 105.25,
+   "avgHours": 9.57,
+   "shortDays": [
+    {
+     "date": "2026-08-21",
+     "in": "11:02 AM",
+     "out": "06:02 PM",
+     "hours": 7.0,
+     "missedPunch": false
+    }
+   ],
+   "rules": [
+    "short-hours",
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_160",
+   "name": "Srinivasarao Baratam",
+   "email": "srinivas.baratam@vconnectech.in",
+   "daysPresent": 11,
+   "totalHours": 111.11,
+   "avgHours": 10.1,
+   "shortDays": [],
+   "rules": [
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "AFL_01",
+   "name": "Veneel George Dogga",
+   "email": "george@apexflo.ai",
+   "daysPresent": 12,
+   "totalHours": 108.0,
+   "avgHours": 9.0,
+   "shortDays": [],
+   "rules": [
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VCC_117",
+   "name": "Tarun Allani",
+   "email": "tarun.allani@vconnectech.in",
+   "daysPresent": 13,
+   "totalHours": 73.03,
+   "avgHours": 5.62,
+   "shortDays": [
+    {
+     "date": "2026-08-05",
+     "in": "10:27 AM",
+     "out": "05:55 PM",
+     "hours": 7.47,
+     "missedPunch": false
+    },
+    {
+     "date": "2026-08-07",
+     "in": "10:13 AM",
+     "out": "05:21 PM",
+     "hours": 7.13,
+     "missedPunch": false
+    },
+    {
+     "date": "2026-08-11",
+     "in": "10:55 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-12",
+     "in": "12:47 PM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-17",
+     "in": "11:39 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-18",
+     "in": "11:53 AM",
+     "out": "06:23 PM",
+     "hours": 6.5,
+     "missedPunch": false
+    },
+    {
+     "date": "2026-08-20",
+     "in": "11:55 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-21",
+     "in": "12:15 PM",
+     "out": "04:19 PM",
+     "hours": 4.07,
+     "missedPunch": false
+    },
+    {
+     "date": "2026-08-24",
+     "in": "10:59 AM",
+     "out": "06:08 PM",
+     "hours": 7.15,
+     "missedPunch": false
+    },
+    {
+     "date": "2026-08-26",
+     "in": "10:34 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    }
+   ],
+   "rules": [
+    "short-hours",
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_113",
+   "name": "Sasikanth GollaDasari",
+   "email": "sasikanth.golladasari@vconnectech.in",
+   "daysPresent": 13,
+   "totalHours": 67.23,
+   "avgHours": 5.17,
+   "shortDays": [
+    {
+     "date": "2026-08-05",
+     "in": "10:04 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-06",
+     "in": "10:20 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-07",
+     "in": "12:35 PM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-11",
+     "in": "10:07 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-13",
+     "in": "09:10 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-14",
+     "in": "10:09 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-20",
+     "in": "10:08 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-27",
+     "in": "10:11 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-31",
+     "in": "12:26 PM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    }
+   ],
+   "rules": [
+    "short-hours",
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_130",
+   "name": "Poorna Kamasani",
+   "email": "poorna.kamasani@vconnectech.in",
+   "daysPresent": 13,
+   "totalHours": 112.25,
+   "avgHours": 8.63,
+   "shortDays": [
+    {
+     "date": "2026-08-03",
+     "in": "10:03 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-19",
+     "in": "10:09 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-20",
+     "in": "10:26 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    }
+   ],
+   "rules": [
+    "short-hours",
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VCIN_52",
+   "name": "Venkat Dhanush Attuluri",
+   "email": "dhanush.attuluri@vconnectech.in",
+   "daysPresent": 14,
+   "totalHours": 107.41,
+   "avgHours": 7.67,
+   "shortDays": [
+    {
+     "date": "2026-08-28",
+     "in": "11:05 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    }
+   ],
+   "rules": [
+    "short-hours",
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_203",
+   "name": "Aadesh Gonda",
+   "email": "aadesh.gonda@vconnectech.in",
+   "daysPresent": 14,
+   "totalHours": 127.85,
+   "avgHours": 9.13,
+   "shortDays": [],
+   "rules": [
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_216",
+   "name": "Mounika Annepu",
+   "email": "mounika.annepu@vconnectech.in",
+   "daysPresent": 14,
+   "totalHours": 145.37,
+   "avgHours": 10.38,
+   "shortDays": [],
+   "rules": [
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_223",
+   "name": "Durga Bhavani Anasuri",
+   "email": "durgabhavani.anasuri@vconnectech.in",
+   "daysPresent": 15,
+   "totalHours": 115.33,
+   "avgHours": 7.69,
+   "shortDays": [
+    {
+     "date": "2026-08-10",
+     "in": "09:09 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-14",
+     "in": "09:26 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-27",
+     "in": "09:06 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-28",
+     "in": "09:21 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    }
+   ],
+   "rules": [
+    "short-hours",
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_234",
+   "name": "Roopini Gorle",
+   "email": "roopini.gorle@vconnectech.in",
+   "daysPresent": 15,
+   "totalHours": 139.33,
+   "avgHours": 9.29,
+   "shortDays": [],
+   "rules": [
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VCIN_63",
+   "name": "Roshini Vishnumolakala",
+   "email": "roshini.vishnumolakula@vconnectech.in",
+   "daysPresent": 15,
+   "totalHours": 140.95,
+   "avgHours": 9.4,
+   "shortDays": [],
+   "rules": [
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_109",
+   "name": "Swathi Kandukuri",
+   "email": "swathi.kandukuri@vconnectech.in",
+   "daysPresent": 16,
+   "totalHours": 135.45,
+   "avgHours": 8.47,
+   "shortDays": [
+    {
+     "date": "2026-08-04",
+     "in": "10:14 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-06",
+     "in": "10:14 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-07",
+     "in": "10:48 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-10",
+     "in": "10:24 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-13",
+     "in": "10:18 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-19",
+     "in": "10:21 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-20",
+     "in": "10:32 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-24",
+     "in": "10:12 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-27",
+     "in": "09:05 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-31",
+     "in": "10:16 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    }
+   ],
+   "rules": [
+    "short-hours",
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_165",
+   "name": "Erothu Naga Sai Yashwanth",
+   "email": "yashwanth.erothu@vconnectech.in",
+   "daysPresent": 16,
+   "totalHours": 158.2,
+   "avgHours": 9.89,
+   "shortDays": [],
+   "rules": [
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_001",
+   "name": "HR Orientation",
+   "email": "hr2@vconnectech.in",
+   "daysPresent": 16,
+   "totalHours": 144.0,
+   "avgHours": 9.0,
+   "shortDays": [],
+   "rules": [
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_242",
+   "name": "Kiranmai Battu",
+   "email": "kiranmai.battu@vconnectech.in",
+   "daysPresent": 16,
+   "totalHours": 155.35,
+   "avgHours": 9.71,
+   "shortDays": [],
+   "rules": [
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_139",
+   "name": "Srinivasarao Chandaka",
+   "email": "srinivas.chandaka@vconnectech.in",
+   "daysPresent": 16,
+   "totalHours": 185.26,
+   "avgHours": 11.58,
+   "shortDays": [],
+   "rules": [
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_114",
+   "name": "Vaishnavi Vulapu",
+   "email": "vaishnavi.vulapu@vconnectech.in",
+   "daysPresent": 17,
+   "totalHours": 101.7,
+   "avgHours": 5.98,
+   "shortDays": [
+    {
+     "date": "2026-08-04",
+     "in": "10:28 AM",
+     "out": "06:15 PM",
+     "hours": 7.78,
+     "missedPunch": false
+    },
+    {
+     "date": "2026-08-05",
+     "in": "09:40 AM",
+     "out": "10:00 AM",
+     "hours": 0.33,
+     "missedPunch": false
+    },
+    {
+     "date": "2026-08-06",
+     "in": "09:44 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-07",
+     "in": "11:49 AM",
+     "out": "06:26 PM",
+     "hours": 6.62,
+     "missedPunch": false
+    },
+    {
+     "date": "2026-08-11",
+     "in": "09:40 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-14",
+     "in": "09:21 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-17",
+     "in": "10:45 AM",
+     "out": "06:30 PM",
+     "hours": 7.75,
+     "missedPunch": false
+    },
+    {
+     "date": "2026-08-21",
+     "in": "09:45 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-25",
+     "in": "09:45 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-26",
+     "in": "10:02 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-27",
+     "in": "09:30 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    }
+   ],
+   "rules": [
+    "short-hours",
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_215",
+   "name": "Kameswara Rao Dasari",
+   "email": "kamesh.dasari@vconnectech.in",
+   "daysPresent": 17,
+   "totalHours": 140.11,
+   "avgHours": 8.24,
+   "shortDays": [
+    {
+     "date": "2026-08-03",
+     "in": "12:01 PM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-05",
+     "in": "05:40 PM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-07",
+     "in": "11:30 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-11",
+     "in": "02:23 PM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-17",
+     "in": "09:53 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-18",
+     "in": "02:07 PM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-21",
+     "in": "01:13 PM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-24",
+     "in": "02:28 PM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-26",
+     "in": "11:02 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-28",
+     "in": "03:05 PM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    }
+   ],
+   "rules": [
+    "short-hours",
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_105",
+   "name": "Venkata Rajesh Adigopula",
+   "email": "venkatarajesh.adigopula@vconnectech.in",
+   "daysPresent": 17,
+   "totalHours": 184.81,
+   "avgHours": 10.87,
+   "shortDays": [
+    {
+     "date": "2026-08-07",
+     "in": "10:14 AM",
+     "out": "05:59 PM",
+     "hours": 7.75,
+     "missedPunch": false
+    },
+    {
+     "date": "2026-08-13",
+     "in": "10:47 AM",
+     "out": "05:30 PM",
+     "hours": 6.72,
+     "missedPunch": false
+    },
+    {
+     "date": "2026-08-14",
+     "in": "10:17 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-17",
+     "in": "10:03 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-24",
+     "in": "10:44 AM",
+     "out": "06:41 PM",
+     "hours": 7.95,
+     "missedPunch": false
+    }
+   ],
+   "rules": [
+    "short-hours",
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_178",
+   "name": "Venu Madhav Battula",
+   "email": "venumadhav.battula@vconnectech.in",
+   "daysPresent": 17,
+   "totalHours": 153.28,
+   "avgHours": 9.02,
+   "shortDays": [
+    {
+     "date": "2026-08-06",
+     "in": "09:48 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-18",
+     "in": "09:40 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-20",
+     "in": "10:08 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-21",
+     "in": "03:23 PM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    }
+   ],
+   "rules": [
+    "short-hours",
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_152",
+   "name": "Akhila Reddy Addula",
+   "email": "akhila.addula@vconnectech.in",
+   "daysPresent": 17,
+   "totalHours": 157.21,
+   "avgHours": 9.25,
+   "shortDays": [
+    {
+     "date": "2026-08-04",
+     "in": "01:01 PM",
+     "out": "08:29 PM",
+     "hours": 7.47,
+     "missedPunch": false
+    },
+    {
+     "date": "2026-08-11",
+     "in": "10:10 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-18",
+     "in": "12:29 PM",
+     "out": "06:58 PM",
+     "hours": 6.48,
+     "missedPunch": false
+    }
+   ],
+   "rules": [
+    "short-hours",
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_110",
+   "name": "Shyam Kumar Thella",
+   "email": "shyam.thella@vconnectech.in",
+   "daysPresent": 17,
+   "totalHours": 178.43,
+   "avgHours": 10.5,
+   "shortDays": [
+    {
+     "date": "2026-08-06",
+     "in": "09:01 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-07",
+     "in": "09:16 AM",
+     "out": "05:06 PM",
+     "hours": 7.83,
+     "missedPunch": false
+    },
+    {
+     "date": "2026-08-28",
+     "in": "09:47 AM",
+     "out": "05:44 PM",
+     "hours": 7.95,
+     "missedPunch": false
+    }
+   ],
+   "rules": [
+    "short-hours",
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_228",
+   "name": "Sridevi Kona",
+   "email": "sridevi.kona@vconnectech.in",
+   "daysPresent": 17,
+   "totalHours": 157.76,
+   "avgHours": 9.28,
+   "shortDays": [
+    {
+     "date": "2026-08-04",
+     "in": "09:25 AM",
+     "out": "01:08 PM",
+     "hours": 3.72,
+     "missedPunch": false
+    },
+    {
+     "date": "2026-08-25",
+     "in": "09:40 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    }
+   ],
+   "rules": [
+    "short-hours",
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_213",
+   "name": "Sowmya Mutakoduru",
+   "email": "sowmya.mutakoduru@vconnectech.in",
+   "daysPresent": 17,
+   "totalHours": 148.93,
+   "avgHours": 8.76,
+   "shortDays": [
+    {
+     "date": "2026-08-12",
+     "in": "09:01 AM",
+     "out": "01:03 PM",
+     "hours": 4.03,
+     "missedPunch": false
+    }
+   ],
+   "rules": [
+    "short-hours",
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_246",
+   "name": "Srilekha Immadisetty",
+   "email": "srilekha.immadisetty@vconnectech.in",
+   "daysPresent": 17,
+   "totalHours": 153.32,
+   "avgHours": 9.02,
+   "shortDays": [],
+   "rules": [
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_195",
+   "name": "Ajay Sirigiri",
+   "email": "ajay.sirigiri@vconnectech.in",
+   "daysPresent": 18,
+   "totalHours": 165.62,
+   "avgHours": 9.2,
+   "shortDays": [
+    {
+     "date": "2026-08-03",
+     "in": "09:11 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-14",
+     "in": "10:07 AM",
+     "out": "06:02 PM",
+     "hours": 7.92,
+     "missedPunch": false
+    },
+    {
+     "date": "2026-08-21",
+     "in": "09:30 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-26",
+     "in": "09:30 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    }
+   ],
+   "rules": [
+    "short-hours",
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_126",
+   "name": "Sreekanth Arati",
+   "email": "sreekanth.arati@vconnectech.in",
+   "daysPresent": 18,
+   "totalHours": 194.41,
+   "avgHours": 10.8,
+   "shortDays": [
+    {
+     "date": "2026-08-07",
+     "in": "09:34 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-18",
+     "in": "09:30 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-25",
+     "in": "09:23 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-27",
+     "in": "09:54 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    }
+   ],
+   "rules": [
+    "short-hours",
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VCIN_49",
+   "name": "Praddumna Rajendra Raut",
+   "email": "praddumna.raut@vconnectech.in",
+   "daysPresent": 18,
+   "totalHours": 232.63,
+   "avgHours": 12.92,
+   "shortDays": [
+    {
+     "date": "2026-08-03",
+     "in": "08:13 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-21",
+     "in": "09:10 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-25",
+     "in": "09:48 AM",
+     "out": "05:42 PM",
+     "hours": 7.9,
+     "missedPunch": false
+    }
+   ],
+   "rules": [
+    "short-hours",
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_235",
+   "name": "Vaishnavi Gandla",
+   "email": "vaishnavi.gandla@vconnectech.in",
+   "daysPresent": 18,
+   "totalHours": 170.52,
+   "avgHours": 9.47,
+   "shortDays": [
+    {
+     "date": "2026-08-07",
+     "in": "10:32 AM",
+     "out": "06:14 PM",
+     "hours": 7.7,
+     "missedPunch": false
+    },
+    {
+     "date": "2026-08-25",
+     "in": "10:23 AM",
+     "out": "06:05 PM",
+     "hours": 7.7,
+     "missedPunch": false
+    }
+   ],
+   "rules": [
+    "short-hours",
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_247",
+   "name": "Ambika Vallandas",
+   "email": "ambika.vallandas@vconnectech.in",
+   "daysPresent": 18,
+   "totalHours": 206.48,
+   "avgHours": 11.47,
+   "shortDays": [
+    {
+     "date": "2026-08-06",
+     "in": "09:36 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    }
+   ],
+   "rules": [
+    "short-hours",
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VCIN_50",
+   "name": "Priya Kalaga",
+   "email": "priya.kalaga@vconnectech.in",
+   "daysPresent": 18,
+   "totalHours": 162.38,
+   "avgHours": 9.02,
+   "shortDays": [
+    {
+     "date": "2026-08-18",
+     "in": "09:19 AM",
+     "out": "03:57 PM",
+     "hours": 6.63,
+     "missedPunch": false
+    }
+   ],
+   "rules": [
+    "short-hours",
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_149",
+   "name": "Rudra bhupathi naidu Haridasu",
+   "email": "rudrabhupati.haridasu@vconnectech.in",
+   "daysPresent": 18,
+   "totalHours": 160.84,
+   "avgHours": 8.94,
+   "shortDays": [
+    {
+     "date": "2026-08-26",
+     "in": "09:18 AM",
+     "out": "04:53 PM",
+     "hours": 7.58,
+     "missedPunch": false
+    }
+   ],
+   "rules": [
+    "short-hours",
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_225",
+   "name": "Sudarshan Reddy Gunthapalli",
+   "email": "sudharshan.gunthapalli@vconnectech.in",
+   "daysPresent": 18,
+   "totalHours": 218.15,
+   "avgHours": 12.12,
+   "shortDays": [
+    {
+     "date": "2026-08-21",
+     "in": "10:19 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    }
+   ],
+   "rules": [
+    "short-hours",
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_177",
+   "name": "Abhishek Begari",
+   "email": "abhishek.begari@vconnectech.in",
+   "daysPresent": 18,
+   "totalHours": 165.32,
+   "avgHours": 9.18,
+   "shortDays": [],
+   "rules": [
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_189",
+   "name": "Anil Chittimadha",
+   "email": "anil.chittimadha@vconnectech.in",
+   "daysPresent": 18,
+   "totalHours": 164.01,
+   "avgHours": 9.11,
+   "shortDays": [],
+   "rules": [
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VCIN_53",
+   "name": "Durga R",
+   "email": "durga.r@vconnectech.in",
+   "daysPresent": 18,
+   "totalHours": 181.71,
+   "avgHours": 10.1,
+   "shortDays": [],
+   "rules": [
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_231",
+   "name": "Lakshmanaswami Gonthina",
+   "email": "lakshmanaswami.gonthina@vconnectech.in",
+   "daysPresent": 18,
+   "totalHours": 167.02,
+   "avgHours": 9.28,
+   "shortDays": [],
+   "rules": [
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_205",
+   "name": "Limin Veleparampil",
+   "email": "limin.veleparampil@vconnectech.in",
+   "daysPresent": 18,
+   "totalHours": 183.02,
+   "avgHours": 10.17,
+   "shortDays": [],
+   "rules": [
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_116",
+   "name": "Abhishek Vulapu Prabhakar",
+   "email": "abhishek.vulapu@vconnectech.in",
+   "daysPresent": 19,
+   "totalHours": 188.06,
+   "avgHours": 9.9,
+   "shortDays": [
+    {
+     "date": "2026-08-04",
+     "in": "10:01 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-06",
+     "in": "10:15 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-07",
+     "in": "11:02 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-11",
+     "in": "10:01 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-13",
+     "in": "10:09 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-14",
+     "in": "10:43 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-19",
+     "in": "09:54 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-20",
+     "in": "10:02 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-25",
+     "in": "10:01 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-26",
+     "in": "10:02 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-28",
+     "in": "01:35 PM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    }
+   ],
+   "rules": [
+    "short-hours",
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_172",
+   "name": "Kranthi Chaitanya Udarakonda",
+   "email": "kranthichaitanya.udarakonda@vconnectech.in",
+   "daysPresent": 19,
+   "totalHours": 172.41,
+   "avgHours": 9.07,
+   "shortDays": [
+    {
+     "date": "2026-08-03",
+     "in": "11:44 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-06",
+     "in": "08:18 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-07",
+     "in": "11:23 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-12",
+     "in": "08:15 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-13",
+     "in": "12:27 PM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-17",
+     "in": "11:45 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-19",
+     "in": "10:14 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-20",
+     "in": "12:54 PM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-26",
+     "in": "08:15 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-28",
+     "in": "08:15 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    }
+   ],
+   "rules": [
+    "short-hours",
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VCC_114",
+   "name": "Keerthi Pratap Chintala",
+   "email": "pratap.chintala@vconnectech.in",
+   "daysPresent": 19,
+   "totalHours": 143.88,
+   "avgHours": 7.57,
+   "shortDays": [
+    {
+     "date": "2026-08-13",
+     "in": "10:47 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-24",
+     "in": "10:16 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-25",
+     "in": "10:49 AM",
+     "out": "06:31 PM",
+     "hours": 7.7,
+     "missedPunch": false
+    },
+    {
+     "date": "2026-08-26",
+     "in": "09:50 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    }
+   ],
+   "rules": [
+    "short-hours",
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_222",
+   "name": "Santhoshi Mani Undamatla",
+   "email": "santhoshi.undamatla@vconnectech.in",
+   "daysPresent": 19,
+   "totalHours": 170.77,
+   "avgHours": 8.99,
+   "shortDays": [
+    {
+     "date": "2026-08-04",
+     "in": "10:01 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-05",
+     "in": "10:01 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-07",
+     "in": "10:06 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-21",
+     "in": "10:03 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    }
+   ],
+   "rules": [
+    "short-hours",
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_158",
+   "name": "Adiseshulu Thollikonda",
+   "email": "adiseshulu.thollikonda@vconnectech.in",
+   "daysPresent": 19,
+   "totalHours": 185.78,
+   "avgHours": 9.78,
+   "shortDays": [
+    {
+     "date": "2026-08-06",
+     "in": "08:09 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-24",
+     "in": "03:10 PM",
+     "out": "07:19 PM",
+     "hours": 4.15,
+     "missedPunch": false
+    },
+    {
+     "date": "2026-08-27",
+     "in": "09:28 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    }
+   ],
+   "rules": [
+    "short-hours",
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VCIN_43",
+   "name": "Jayadev Lokanadham",
+   "email": "jayadev.lokanadham@vconnectech.in",
+   "daysPresent": 19,
+   "totalHours": 168.78,
+   "avgHours": 8.88,
+   "shortDays": [
+    {
+     "date": "2026-08-14",
+     "in": "09:15 AM",
+     "out": "10:48 AM",
+     "hours": 1.55,
+     "missedPunch": false
+    },
+    {
+     "date": "2026-08-23",
+     "in": "09:11 AM",
+     "out": "09:11 AM",
+     "hours": 0.0,
+     "missedPunch": false
+    },
+    {
+     "date": "2026-08-28",
+     "in": "10:15 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    }
+   ],
+   "rules": [
+    "short-hours",
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_210",
+   "name": "Supriya Kallepelli",
+   "email": "supriya.kallepelli@vconnectech.in",
+   "daysPresent": 19,
+   "totalHours": 151.45,
+   "avgHours": 7.97,
+   "shortDays": [
+    {
+     "date": "2026-08-14",
+     "in": "10:14 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-17",
+     "in": "09:42 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    }
+   ],
+   "rules": [
+    "short-hours",
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_164",
+   "name": "Akash Reddyshetty",
+   "email": "akash.reddyshetty@vconnectech.in",
+   "daysPresent": 19,
+   "totalHours": 193.65,
+   "avgHours": 10.19,
+   "shortDays": [
+    {
+     "date": "2026-08-14",
+     "in": "09:05 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    }
+   ],
+   "rules": [
+    "short-hours",
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_188",
+   "name": "Rayidi Luhitha",
+   "email": "luhitha.rayidi@vconnectech.in",
+   "daysPresent": 19,
+   "totalHours": 169.71,
+   "avgHours": 8.93,
+   "shortDays": [
+    {
+     "date": "2026-08-31",
+     "in": "01:27 PM",
+     "out": "05:57 PM",
+     "hours": 4.5,
+     "missedPunch": false
+    }
+   ],
+   "rules": [
+    "short-hours",
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_207",
+   "name": "Rithika Rupaji",
+   "email": "rithika.rupaji@vconnectech.in",
+   "daysPresent": 19,
+   "totalHours": 181.23,
+   "avgHours": 9.54,
+   "shortDays": [
+    {
+     "date": "2026-08-14",
+     "in": "09:55 AM",
+     "out": "04:57 PM",
+     "hours": 7.03,
+     "missedPunch": false
+    }
+   ],
+   "rules": [
+    "short-hours",
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_236",
+   "name": "Saheram Kurra",
+   "email": "saheram.kurra@vconnectech.in",
+   "daysPresent": 19,
+   "totalHours": 187.95,
+   "avgHours": 9.89,
+   "shortDays": [
+    {
+     "date": "2026-08-07",
+     "in": "09:25 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    }
+   ],
+   "rules": [
+    "short-hours",
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VCIN_47",
+   "name": "Sai Swetha Sri Menuga",
+   "email": "saiswetha.menuga@vconnectech.in",
+   "daysPresent": 19,
+   "totalHours": 180.27,
+   "avgHours": 9.49,
+   "shortDays": [
+    {
+     "date": "2026-08-01",
+     "in": "03:55 PM",
+     "out": "06:49 PM",
+     "hours": 2.9,
+     "missedPunch": false
+    }
+   ],
+   "rules": [
+    "short-hours",
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VCIN_54",
+   "name": "Bharath Mamidi",
+   "email": "bharath.mamidi@vconnectech.in",
+   "daysPresent": 19,
+   "totalHours": 168.39,
+   "avgHours": 8.86,
+   "shortDays": [],
+   "rules": [
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_103",
+   "name": "Deepika Vandana",
+   "email": "deepika.vandana@vconnectech.in",
+   "daysPresent": 19,
+   "totalHours": 177.17,
+   "avgHours": 9.32,
+   "shortDays": [],
+   "rules": [
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_187",
+   "name": "HARSHA VARDHAN BALI",
+   "email": "harshavardhan.bali@vconnectech.in",
+   "daysPresent": 19,
+   "totalHours": 191.88,
+   "avgHours": 10.1,
+   "shortDays": [],
+   "rules": [
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_200",
+   "name": "Harika Kunduru",
+   "email": "harika.kunduru@vconnectech.in",
+   "daysPresent": 19,
+   "totalHours": 181.69,
+   "avgHours": 9.56,
+   "shortDays": [],
+   "rules": [
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_194",
+   "name": "Karthikeya Yepuri",
+   "email": "karthikeya.yepuri@vconnectech.in",
+   "daysPresent": 19,
+   "totalHours": 179.45,
+   "avgHours": 9.44,
+   "shortDays": [],
+   "rules": [
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_127",
+   "name": "Mallikharjun Palasa",
+   "email": "mallikharjun.palasa@vconnectech.in",
+   "daysPresent": 19,
+   "totalHours": 198.92,
+   "avgHours": 10.47,
+   "shortDays": [],
+   "rules": [
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_150",
+   "name": "Mani Gopi Nalajala",
+   "email": "manigopi.nalajala@vconnectech.in",
+   "daysPresent": 19,
+   "totalHours": 253.82,
+   "avgHours": 13.36,
+   "shortDays": [],
+   "rules": [
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_170",
+   "name": "Pavani D S",
+   "email": "pavani.ds@vconnectech.in",
+   "daysPresent": 19,
+   "totalHours": 183.09,
+   "avgHours": 9.64,
+   "shortDays": [],
+   "rules": [
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_180",
+   "name": "Saahith chandra Geela",
+   "email": "saahithchandra.geela@vconnectech.in",
+   "daysPresent": 19,
+   "totalHours": 186.7,
+   "avgHours": 9.83,
+   "shortDays": [],
+   "rules": [
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_101",
+   "name": "Srinivasa Rao Supuri",
+   "email": "srinivas.supuri@vconnectech.in",
+   "daysPresent": 19,
+   "totalHours": 202.71,
+   "avgHours": 10.67,
+   "shortDays": [],
+   "rules": [
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_193",
+   "name": "Viswanadha muralidhar Tammana",
+   "email": "viswanadhamuralidhar.tammana@vconnectech.in",
+   "daysPresent": 19,
+   "totalHours": 169.24,
+   "avgHours": 8.91,
+   "shortDays": [],
+   "rules": [
+    "few-days"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_155",
+   "name": "Linga Swamy Shyaga",
+   "email": "lingaswamy.shyaga@vconnectech.in",
+   "daysPresent": 20,
+   "totalHours": 169.11,
+   "avgHours": 8.46,
+   "shortDays": [
+    {
+     "date": "2026-08-04",
+     "in": "09:48 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-07",
+     "in": "09:44 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-11",
+     "in": "09:45 AM",
+     "out": "09:45 AM",
+     "hours": 0.0,
+     "missedPunch": false
+    },
+    {
+     "date": "2026-08-12",
+     "in": "09:51 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-13",
+     "in": "09:55 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-14",
+     "in": "12:24 PM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-18",
+     "in": "09:43 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-20",
+     "in": "09:38 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-21",
+     "in": "09:43 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-24",
+     "in": "10:15 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-26",
+     "in": "09:32 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-28",
+     "in": "10:37 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    }
+   ],
+   "rules": [
+    "short-hours"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_100",
+   "name": "Sai Sudha Kilaru",
+   "email": "saisudha.kilaru@vconnectech.in",
+   "daysPresent": 20,
+   "totalHours": 145.87,
+   "avgHours": 7.29,
+   "shortDays": [
+    {
+     "date": "2026-08-05",
+     "in": "10:10 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-07",
+     "in": "10:02 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-10",
+     "in": "09:49 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-11",
+     "in": "10:10 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-13",
+     "in": "10:03 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-14",
+     "in": "11:29 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-17",
+     "in": "10:02 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-20",
+     "in": "10:39 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-26",
+     "in": "10:05 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-27",
+     "in": "10:08 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-28",
+     "in": "10:46 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    }
+   ],
+   "rules": [
+    "short-hours"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_245",
+   "name": "Radhika Pothuraju",
+   "email": "radhika.p@vconnectech.in",
+   "daysPresent": 20,
+   "totalHours": 187.08,
+   "avgHours": 9.35,
+   "shortDays": [
+    {
+     "date": "2026-08-06",
+     "in": "08:23 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-10",
+     "in": "08:33 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-14",
+     "in": "08:54 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-21",
+     "in": "08:56 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-26",
+     "in": "08:54 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    }
+   ],
+   "rules": [
+    "short-hours"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_192",
+   "name": "Sudeep Channalli",
+   "email": "sudeep.channalli@vconnectech.in",
+   "daysPresent": 20,
+   "totalHours": 167.66,
+   "avgHours": 8.38,
+   "shortDays": [
+    {
+     "date": "2026-08-04",
+     "in": "10:27 AM",
+     "out": "06:03 PM",
+     "hours": 7.6,
+     "missedPunch": false
+    },
+    {
+     "date": "2026-08-14",
+     "in": "09:39 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-19",
+     "in": "09:42 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-26",
+     "in": "09:22 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-28",
+     "in": "09:33 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    }
+   ],
+   "rules": [
+    "short-hours"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_148",
+   "name": "Venkatesh Nookatattu",
+   "email": "venkatesh.nokatattu@vconnectech.in",
+   "daysPresent": 20,
+   "totalHours": 206.92,
+   "avgHours": 10.35,
+   "shortDays": [
+    {
+     "date": "2026-08-12",
+     "in": "10:17 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-14",
+     "in": "09:56 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-21",
+     "in": "09:59 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-28",
+     "in": "11:12 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-31",
+     "in": "10:12 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    }
+   ],
+   "rules": [
+    "short-hours"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_182",
+   "name": "Mohan Rao Singireddi",
+   "email": "mohanrao.singireddi@vconnectech.in",
+   "daysPresent": 20,
+   "totalHours": 211.93,
+   "avgHours": 10.6,
+   "shortDays": [
+    {
+     "date": "2026-08-04",
+     "in": "10:08 AM",
+     "out": "02:50 PM",
+     "hours": 4.7,
+     "missedPunch": false
+    },
+    {
+     "date": "2026-08-07",
+     "in": "09:47 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-27",
+     "in": "09:46 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-31",
+     "in": "09:57 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    }
+   ],
+   "rules": [
+    "short-hours"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_108",
+   "name": "Sai Swetha Devi Vana",
+   "email": "saiswetha.vana@vconnectech.in",
+   "daysPresent": 20,
+   "totalHours": 143.76,
+   "avgHours": 7.19,
+   "shortDays": [
+    {
+     "date": "2026-08-20",
+     "in": "11:33 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-21",
+     "in": "06:04 PM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-27",
+     "in": "01:44 PM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-28",
+     "in": "02:41 PM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    }
+   ],
+   "rules": [
+    "short-hours"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VCC_112",
+   "name": "Venkata Kiran Venigalla",
+   "email": "venkatakiran.venigalla@vconnectech.in",
+   "daysPresent": 20,
+   "totalHours": 189.99,
+   "avgHours": 9.5,
+   "shortDays": [
+    {
+     "date": "2026-08-07",
+     "in": "10:15 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-14",
+     "in": "09:58 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-20",
+     "in": "09:52 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    }
+   ],
+   "rules": [
+    "short-hours"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_219",
+   "name": "Vishnu Vardhan Reddy Siddavatam",
+   "email": "vishnuvardhan.siddavatam@vconnectech.in",
+   "daysPresent": 20,
+   "totalHours": 182.22,
+   "avgHours": 9.11,
+   "shortDays": [
+    {
+     "date": "2026-08-14",
+     "in": "10:01 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-29",
+     "in": "01:36 AM",
+     "out": "01:37 AM",
+     "hours": 0.02,
+     "missedPunch": false
+    },
+    {
+     "date": "2026-08-30",
+     "in": "07:23 PM",
+     "out": "09:05 PM",
+     "hours": 1.7,
+     "missedPunch": false
+    }
+   ],
+   "rules": [
+    "short-hours"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_241",
+   "name": "jagadguru peyyala",
+   "email": "jagadguru.peyyala@vconnectech.in",
+   "daysPresent": 20,
+   "totalHours": 178.53,
+   "avgHours": 8.93,
+   "shortDays": [
+    {
+     "date": "2026-08-03",
+     "in": "09:11 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-09",
+     "in": "03:27 PM",
+     "out": "06:45 PM",
+     "hours": 3.3,
+     "missedPunch": false
+    }
+   ],
+   "rules": [
+    "short-hours"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_132",
+   "name": "Aparna Ullangula",
+   "email": "aparna.ullangula@vconnectech.in",
+   "daysPresent": 20,
+   "totalHours": 218.32,
+   "avgHours": 10.92,
+   "shortDays": [
+    {
+     "date": "2026-08-28",
+     "in": "09:38 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    }
+   ],
+   "rules": [
+    "short-hours"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_190",
+   "name": "Bhargav Sai Pothula",
+   "email": "bhargavsai.pothula@vconnectech.in",
+   "daysPresent": 20,
+   "totalHours": 176.93,
+   "avgHours": 8.85,
+   "shortDays": [
+    {
+     "date": "2026-08-28",
+     "in": "01:48 PM",
+     "out": "05:52 PM",
+     "hours": 4.07,
+     "missedPunch": false
+    }
+   ],
+   "rules": [
+    "short-hours"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_191",
+   "name": "Kishore Reddy Sollapuram",
+   "email": "kishorereddy.sollapuram@vconnectech.in",
+   "daysPresent": 20,
+   "totalHours": 214.51,
+   "avgHours": 10.73,
+   "shortDays": [
+    {
+     "date": "2026-08-24",
+     "in": "10:19 AM",
+     "out": "06:06 PM",
+     "hours": 7.78,
+     "missedPunch": false
+    }
+   ],
+   "rules": [
+    "short-hours"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_239",
+   "name": "Nagireddy Narendra Reddy",
+   "email": "narendra.nagireddy@vconnectech.in",
+   "daysPresent": 20,
+   "totalHours": 185.4,
+   "avgHours": 9.27,
+   "shortDays": [
+    {
+     "date": "2026-08-09",
+     "in": "01:28 PM",
+     "out": "06:40 PM",
+     "hours": 5.2,
+     "missedPunch": false
+    }
+   ],
+   "rules": [
+    "short-hours"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_184",
+   "name": "Venkata Karthikeya Sanaka",
+   "email": "venkatakarthikeya.sanaka@vconnectech.in",
+   "daysPresent": 20,
+   "totalHours": 242.11,
+   "avgHours": 12.11,
+   "shortDays": [
+    {
+     "date": "2026-08-21",
+     "in": "10:06 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    }
+   ],
+   "rules": [
+    "short-hours"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_243",
+   "name": "Vyshnavi Sai Kolapalli",
+   "email": "vyshnavisai.kolapalli@vconnectech.in",
+   "daysPresent": 20,
+   "totalHours": 180.83,
+   "avgHours": 9.04,
+   "shortDays": [
+    {
+     "date": "2026-08-28",
+     "in": "09:32 AM",
+     "out": "05:24 PM",
+     "hours": 7.87,
+     "missedPunch": false
+    }
+   ],
+   "rules": [
+    "short-hours"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_112",
+   "name": "Prithvi Nagilla",
+   "email": "prithvi.nagilla@vconnectech.in",
+   "daysPresent": 21,
+   "totalHours": 198.86,
+   "avgHours": 9.47,
+   "shortDays": [
+    {
+     "date": "2026-08-03",
+     "in": "10:38 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-04",
+     "in": "10:43 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-05",
+     "in": "10:47 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-07",
+     "in": "10:27 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-10",
+     "in": "10:41 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-12",
+     "in": "11:01 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-14",
+     "in": "11:17 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-18",
+     "in": "10:39 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-20",
+     "in": "10:39 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-21",
+     "in": "11:25 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-24",
+     "in": "10:56 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-28",
+     "in": "09:34 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    }
+   ],
+   "rules": [
+    "short-hours"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_214",
+   "name": "Kiran Allada",
+   "email": "kiran.allada@vconnectech.in",
+   "daysPresent": 21,
+   "totalHours": 187.89,
+   "avgHours": 8.95,
+   "shortDays": [
+    {
+     "date": "2026-08-05",
+     "in": "10:08 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-07",
+     "in": "10:07 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-10",
+     "in": "09:25 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-13",
+     "in": "09:17 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-14",
+     "in": "09:39 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-18",
+     "in": "10:18 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-21",
+     "in": "08:51 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-24",
+     "in": "11:40 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-27",
+     "in": "09:28 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-28",
+     "in": "10:03 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-31",
+     "in": "10:24 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    }
+   ],
+   "rules": [
+    "short-hours"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_119",
+   "name": "Pavan Kalyan Buneboina",
+   "email": "pavankalyan.bunaboiena@vconnectech.in",
+   "daysPresent": 21,
+   "totalHours": 161.43,
+   "avgHours": 7.69,
+   "shortDays": [
+    {
+     "date": "2026-08-07",
+     "in": "10:05 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-10",
+     "in": "10:36 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-12",
+     "in": "09:57 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-14",
+     "in": "10:41 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-19",
+     "in": "10:15 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-20",
+     "in": "10:31 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-25",
+     "in": "10:15 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-26",
+     "in": "10:31 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-28",
+     "in": "10:46 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-31",
+     "in": "10:18 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    }
+   ],
+   "rules": [
+    "short-hours"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_131",
+   "name": "Lakshmi Sai Geetha Tappeta",
+   "email": "lakshmigeeta.tappeta@vconnectech.in",
+   "daysPresent": 21,
+   "totalHours": 264.51,
+   "avgHours": 12.6,
+   "shortDays": [
+    {
+     "date": "2026-08-06",
+     "in": "09:09 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-07",
+     "in": "10:05 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-21",
+     "in": "10:06 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-27",
+     "in": "09:51 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-28",
+     "in": "10:05 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    }
+   ],
+   "rules": [
+    "short-hours"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_218",
+   "name": "Poojitha Kota",
+   "email": "poojitha.kota@vconnectech.in",
+   "daysPresent": 21,
+   "totalHours": 206.48,
+   "avgHours": 9.83,
+   "shortDays": [
+    {
+     "date": "2026-08-06",
+     "in": "10:05 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-13",
+     "in": "10:02 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-21",
+     "in": "10:03 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-27",
+     "in": "10:02 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    }
+   ],
+   "rules": [
+    "short-hours"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_240",
+   "name": "Sudheer Reddy",
+   "email": "sudheer.reddy@vconnectech.in",
+   "daysPresent": 21,
+   "totalHours": 214.34,
+   "avgHours": 10.21,
+   "shortDays": [
+    {
+     "date": "2026-08-06",
+     "in": "08:50 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-14",
+     "in": "08:53 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-27",
+     "in": "02:00 PM",
+     "out": "07:30 PM",
+     "hours": 5.5,
+     "missedPunch": false
+    },
+    {
+     "date": "2026-08-28",
+     "in": "09:21 AM",
+     "out": "05:06 PM",
+     "hours": 7.75,
+     "missedPunch": false
+    }
+   ],
+   "rules": [
+    "short-hours"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_168",
+   "name": "Chandrika Koruprolu",
+   "email": "chandrika.koruprolu@vconnectech.in",
+   "daysPresent": 21,
+   "totalHours": 194.55,
+   "avgHours": 9.26,
+   "shortDays": [
+    {
+     "date": "2026-08-04",
+     "in": "09:54 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-06",
+     "in": "09:11 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-28",
+     "in": "11:38 AM",
+     "out": "05:38 PM",
+     "hours": 6.0,
+     "missedPunch": false
+    }
+   ],
+   "rules": [
+    "short-hours"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_171",
+   "name": "Harichandana Kanaparthi",
+   "email": "harichandana.kanaparthi@vconnectech.in",
+   "daysPresent": 21,
+   "totalHours": 195.68,
+   "avgHours": 9.32,
+   "shortDays": [
+    {
+     "date": "2026-08-07",
+     "in": "09:11 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    },
+    {
+     "date": "2026-08-25",
+     "in": "09:45 AM",
+     "out": "09:48 AM",
+     "hours": 0.05,
+     "missedPunch": false
+    }
+   ],
+   "rules": [
+    "short-hours"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_233",
+   "name": "Ameerullah Mohammad",
+   "email": "ameerullah.mahamad@vconnectech.in",
+   "daysPresent": 21,
+   "totalHours": 187.53,
+   "avgHours": 8.93,
+   "shortDays": [
+    {
+     "date": "2026-08-26",
+     "in": "09:28 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    }
+   ],
+   "rules": [
+    "short-hours"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_185",
+   "name": "Harish Thota",
+   "email": "harish.thota@vconnectech.in",
+   "daysPresent": 21,
+   "totalHours": 226.57,
+   "avgHours": 10.79,
+   "shortDays": [
+    {
+     "date": "2026-08-19",
+     "in": "09:33 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    }
+   ],
+   "rules": [
+    "short-hours"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_196",
+   "name": "Keerthi Sepena",
+   "email": "keerthi.sepana@vconnectech.in",
+   "daysPresent": 21,
+   "totalHours": 204.25,
+   "avgHours": 9.73,
+   "shortDays": [
+    {
+     "date": "2026-08-31",
+     "in": "08:59 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    }
+   ],
+   "rules": [
+    "short-hours"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_220",
+   "name": "N S V Ram Pavan Mudragada",
+   "email": "rampavan.mudragada@vconnectech.in",
+   "daysPresent": 21,
+   "totalHours": 195.52,
+   "avgHours": 9.31,
+   "shortDays": [
+    {
+     "date": "2026-08-07",
+     "in": "09:23 AM",
+     "out": "02:15 PM",
+     "hours": 4.87,
+     "missedPunch": false
+    }
+   ],
+   "rules": [
+    "short-hours"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_118",
+   "name": "Sai Vinod Panchangam",
+   "email": "vinodh.panchangam@vconnectech.in",
+   "daysPresent": 21,
+   "totalHours": 236.82,
+   "avgHours": 11.28,
+   "shortDays": [
+    {
+     "date": "2026-08-11",
+     "in": "10:14 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    }
+   ],
+   "rules": [
+    "short-hours"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_248",
+   "name": "Sridhar Akula",
+   "email": "sridhar.akula@vconnectech.in",
+   "daysPresent": 22,
+   "totalHours": 215.65,
+   "avgHours": 9.8,
+   "shortDays": [
+    {
+     "date": "2026-08-07",
+     "in": "09:19 AM",
+     "out": "",
+     "hours": 0.0,
+     "missedPunch": true
+    }
+   ],
+   "rules": [
+    "short-hours"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VCIN_51",
+   "name": "Yogeshwar Reddy Meda",
+   "email": "yogeswarreddy.meda@vconnectech.in",
+   "daysPresent": 22,
+   "totalHours": 201.36,
+   "avgHours": 9.15,
+   "shortDays": [
+    {
+     "date": "2026-08-01",
+     "in": "02:22 PM",
+     "out": "09:19 PM",
+     "hours": 6.95,
+     "missedPunch": false
+    }
+   ],
+   "rules": [
+    "short-hours"
+   ],
+   "flagged": true
+  },
+  {
+   "id": "VC_183",
+   "name": "Anjaneyulu Varimadla",
+   "email": "anjaneyulu.varimadla@vconnectech.in",
+   "daysPresent": 20,
+   "totalHours": 187.04,
+   "avgHours": 9.35,
+   "shortDays": [],
+   "rules": [],
+   "flagged": false
+  },
+  {
+   "id": "VC_167",
+   "name": "Geetha Mounika Velagaleti",
+   "email": "geethamounika.velagaleti@vconnectech.in",
+   "daysPresent": 20,
+   "totalHours": 188.2,
+   "avgHours": 9.41,
+   "shortDays": [],
+   "rules": [],
+   "flagged": false
+  },
+  {
+   "id": "VC_129",
+   "name": "Hemanth Kumar Aare",
+   "email": "hemanth.aare@vconnectech.in",
+   "daysPresent": 20,
+   "totalHours": 214.95,
+   "avgHours": 10.75,
+   "shortDays": [],
+   "rules": [],
+   "flagged": false
+  },
+  {
+   "id": "VC_181",
+   "name": "Kantipudi Sri Sai Kiran",
+   "email": "srisaikiran.kantipudi@vconnectech.in",
+   "daysPresent": 20,
+   "totalHours": 186.44,
+   "avgHours": 9.32,
+   "shortDays": [],
+   "rules": [],
+   "flagged": false
+  },
+  {
+   "id": "VC_161",
+   "name": "MEENIGA VEERESH",
+   "email": "veeresh.meeniga@vconnectech.in",
+   "daysPresent": 20,
+   "totalHours": 188.74,
+   "avgHours": 9.44,
+   "shortDays": [],
+   "rules": [],
+   "flagged": false
+  },
+  {
+   "id": "VCIN_26",
+   "name": "Naveen Kumar Bellamkonda",
+   "email": "naveenkumar.bellamkonda@vconnectech.in",
+   "daysPresent": 20,
+   "totalHours": 205.54,
+   "avgHours": 10.28,
+   "shortDays": [],
+   "rules": [],
+   "flagged": false
+  },
+  {
+   "id": "VC_138",
+   "name": "Pavan Kalyan Gunupuru",
+   "email": "pavankalyan.gunupuru@vconnectech.in",
+   "daysPresent": 20,
+   "totalHours": 189.56,
+   "avgHours": 9.48,
+   "shortDays": [],
+   "rules": [],
+   "flagged": false
+  },
+  {
+   "id": "VC_237",
+   "name": "Pavan Kumar Reddy Katta",
+   "email": "pavankumar.katta@vconnectech.in",
+   "daysPresent": 20,
+   "totalHours": 198.68,
+   "avgHours": 9.93,
+   "shortDays": [],
+   "rules": [],
+   "flagged": false
+  },
+  {
+   "id": "VC_206",
+   "name": "Poorna Lakshmi Praneeth Gorli",
+   "email": "poornapraneeth.gorli@vconnectech.in",
+   "daysPresent": 20,
+   "totalHours": 195.07,
+   "avgHours": 9.75,
+   "shortDays": [],
+   "rules": [],
+   "flagged": false
+  },
+  {
+   "id": "VC_198",
+   "name": "Pujitha Uttharkar",
+   "email": "pujitha.uttharkar@vconnectech.in",
+   "daysPresent": 20,
+   "totalHours": 218.73,
+   "avgHours": 10.94,
+   "shortDays": [],
+   "rules": [],
+   "flagged": false
+  },
+  {
+   "id": "VC_179",
+   "name": "Raviteja Maganti",
+   "email": "raviteja.maganti@vconnectech.in",
+   "daysPresent": 20,
+   "totalHours": 193.07,
+   "avgHours": 9.65,
+   "shortDays": [],
+   "rules": [],
+   "flagged": false
+  },
+  {
+   "id": "VC_166",
+   "name": "Sai Gandhi Naidu Allada",
+   "email": "gandhi.allada@vconnectech.in",
+   "daysPresent": 20,
+   "totalHours": 202.8,
+   "avgHours": 10.14,
+   "shortDays": [],
+   "rules": [],
+   "flagged": false
+  },
+  {
+   "id": "VC_176",
+   "name": "Samudralankaiah Jampani",
+   "email": "samudra@vconnectech.in",
+   "daysPresent": 20,
+   "totalHours": 234.92,
+   "avgHours": 11.75,
+   "shortDays": [],
+   "rules": [],
+   "flagged": false
+  },
+  {
+   "id": "VC_238",
+   "name": "Tejeswara Rao Padda",
+   "email": "tejeswararao.padda@vconnectech.in",
+   "daysPresent": 20,
+   "totalHours": 171.66,
+   "avgHours": 8.58,
+   "shortDays": [],
+   "rules": [],
+   "flagged": false
+  },
+  {
+   "id": "VC_221",
+   "name": "V S Padma Sri Akella",
+   "email": "padmasri.akella@vconnectech.in",
+   "daysPresent": 20,
+   "totalHours": 188.11,
+   "avgHours": 9.41,
+   "shortDays": [],
+   "rules": [],
+   "flagged": false
+  },
+  {
+   "id": "VC_169",
+   "name": "Yeshasri Shereddy",
+   "email": "yeshasri.shereddy@vconnectech.in",
+   "daysPresent": 20,
+   "totalHours": 184.27,
+   "avgHours": 9.21,
+   "shortDays": [],
+   "rules": [],
+   "flagged": false
+  },
+  {
+   "id": "VC_104",
+   "name": "Aravind Kumar Goud Kurra",
+   "email": "aravindkumar.kurra@vconnectech.in",
+   "daysPresent": 21,
+   "totalHours": 230.46,
+   "avgHours": 10.97,
+   "shortDays": [],
+   "rules": [],
+   "flagged": false
+  },
+  {
+   "id": "VC_227",
+   "name": "Bala Satya Phaneendra Borusu",
+   "email": "phaneendra.borusu@vconnectech.in",
+   "daysPresent": 21,
+   "totalHours": 197.81,
+   "avgHours": 9.42,
+   "shortDays": [],
+   "rules": [],
+   "flagged": false
+  },
+  {
+   "id": "VC_212",
+   "name": "Balachandra Anguru",
+   "email": "balachandra.anguru@vconnectech.in",
+   "daysPresent": 21,
+   "totalHours": 189.92,
+   "avgHours": 9.04,
+   "shortDays": [],
+   "rules": [],
+   "flagged": false
+  },
+  {
+   "id": "VC_230",
+   "name": "Chaithra Thota",
+   "email": "chaithra.thota@vconnectech.in",
+   "daysPresent": 21,
+   "totalHours": 191.94,
+   "avgHours": 9.14,
+   "shortDays": [],
+   "rules": [],
+   "flagged": false
+  },
+  {
+   "id": "VC_157",
+   "name": "Hardik Singh Rathore",
+   "email": "hardik.rathore@vconnectech.in",
+   "daysPresent": 21,
+   "totalHours": 189.0,
+   "avgHours": 9.0,
+   "shortDays": [],
+   "rules": [],
+   "flagged": false
+  },
+  {
+   "id": "VC_226",
+   "name": "Jeevan Sai Kanturi",
+   "email": "jeevansai.kanturi@vconnectech.in",
+   "daysPresent": 21,
+   "totalHours": 197.56,
+   "avgHours": 9.41,
+   "shortDays": [],
+   "rules": [],
+   "flagged": false
+  },
+  {
+   "id": "VC_125",
+   "name": "Jithendran Ponnusamy",
+   "email": "jithendran.ponnuswamy@vconnectech.in",
+   "daysPresent": 21,
+   "totalHours": 189.0,
+   "avgHours": 9.0,
+   "shortDays": [],
+   "rules": [],
+   "flagged": false
+  },
+  {
+   "id": "VC_208",
+   "name": "Naga Sai Nikhitha Arepu",
+   "email": "nikhitha.arepu@vconnectech.in",
+   "daysPresent": 21,
+   "totalHours": 207.4,
+   "avgHours": 9.88,
+   "shortDays": [],
+   "rules": [],
+   "flagged": false
+  },
+  {
+   "id": "VC_162",
+   "name": "Naga Subrahmanyam Gandham",
+   "email": "nagasubramanyam.gandham@vconnectech.in",
+   "daysPresent": 21,
+   "totalHours": 231.62,
+   "avgHours": 11.03,
+   "shortDays": [],
+   "rules": [],
+   "flagged": false
+  },
+  {
+   "id": "VC_163",
+   "name": "Nandi Vardhan Reddy Ruka",
+   "email": "nandivardhan.ruka@vconnectech.in",
+   "daysPresent": 21,
+   "totalHours": 265.73,
+   "avgHours": 12.65,
+   "shortDays": [],
+   "rules": [],
+   "flagged": false
+  },
+  {
+   "id": "VC_209",
+   "name": "Naveen Namburi",
+   "email": "naveen.namburi@vconnectech.in",
+   "daysPresent": 21,
+   "totalHours": 210.74,
+   "avgHours": 10.04,
+   "shortDays": [],
+   "rules": [],
+   "flagged": false
+  },
+  {
+   "id": "VC_120",
+   "name": "Noor Mahammad Shaik",
+   "email": "noor.mahammad@vconnectech.in",
+   "daysPresent": 21,
+   "totalHours": 244.19,
+   "avgHours": 11.63,
+   "shortDays": [],
+   "rules": [],
+   "flagged": false
+  },
+  {
+   "id": "VC_141",
+   "name": "Ramesh Ravada",
+   "email": "ramesh.ravada@vconnectech.in",
+   "daysPresent": 21,
+   "totalHours": 239.53,
+   "avgHours": 11.41,
+   "shortDays": [],
+   "rules": [],
+   "flagged": false
+  },
+  {
+   "id": "VCIN_62",
+   "name": "Sagarika Singh",
+   "email": "sagarika.singh@vconnectech.in",
+   "daysPresent": 21,
+   "totalHours": 192.07,
+   "avgHours": 9.15,
+   "shortDays": [],
+   "rules": [],
+   "flagged": false
+  },
+  {
+   "id": "VC_136",
+   "name": "Sai Bharadwaj Itla",
+   "email": "bharadwaj.itla@vconnectech.in",
+   "daysPresent": 21,
+   "totalHours": 209.39,
+   "avgHours": 9.97,
+   "shortDays": [],
+   "rules": [],
+   "flagged": false
+  },
+  {
+   "id": "VC_229",
+   "name": "Sandhya Bommi",
+   "email": "sandhya.bommi@vconnectech.in",
+   "daysPresent": 21,
+   "totalHours": 195.55,
+   "avgHours": 9.31,
+   "shortDays": [],
+   "rules": [],
+   "flagged": false
+  },
+  {
+   "id": "VC_099",
+   "name": "Srikanth Neelam",
+   "email": "srikanth.neelam@vconnectech.in",
+   "daysPresent": 21,
+   "totalHours": 189.0,
+   "avgHours": 9.0,
+   "shortDays": [],
+   "rules": [],
+   "flagged": false
+  },
+  {
+   "id": "VC_159",
+   "name": "Sriram Ungatla",
+   "email": "sriram.ungatla@vconnectech.in",
+   "daysPresent": 21,
+   "totalHours": 193.48,
+   "avgHours": 9.21,
+   "shortDays": [],
+   "rules": [],
+   "flagged": false
+  },
+  {
+   "id": "VC_124",
+   "name": "Sunil Kumar Galipothu",
+   "email": "sunil.galipothu@vconnectech.in",
+   "daysPresent": 21,
+   "totalHours": 201.47,
+   "avgHours": 9.59,
+   "shortDays": [],
+   "rules": [],
+   "flagged": false
+  },
+  {
+   "id": "VCIN_61",
+   "name": "Swapnil Mandal",
+   "email": "swapnil.mandal@vconnectech.in",
+   "daysPresent": 21,
+   "totalHours": 211.45,
+   "avgHours": 10.07,
+   "shortDays": [],
+   "rules": [],
+   "flagged": false
+  },
+  {
+   "id": "VC_217",
+   "name": "Venkata Anil Balijepalli",
+   "email": "anil.balijepalli@vconnectech.in",
+   "daysPresent": 21,
+   "totalHours": 210.29,
+   "avgHours": 10.01,
+   "shortDays": [],
+   "rules": [],
+   "flagged": false
+  },
+  {
+   "id": "VC_134",
+   "name": "Yeswanth Namburi",
+   "email": "yeshwanth.namburi@vconnectech.in",
+   "daysPresent": 21,
+   "totalHours": 192.73,
+   "avgHours": 9.18,
+   "shortDays": [],
+   "rules": [],
+   "flagged": false
+  },
+  {
+   "id": "VC_224",
+   "name": "Vivek Sai Chintha",
+   "email": "viveksai.chintha@vconnectech.in",
+   "daysPresent": 22,
+   "totalHours": 259.26,
+   "avgHours": 11.78,
+   "shortDays": [],
+   "rules": [],
+   "flagged": false
+  }
+ ],
+ "builtAt": "2026-10-06T09:33:57",
+ "sourceModified": "2026-09-18T18:02:41"
+}

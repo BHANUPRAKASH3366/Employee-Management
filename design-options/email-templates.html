@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alert Email Templates</title>
+<style>
+  :root { --brand: #006edb; --ink: #0f1b2d; --ink-2: #44526a; --ink-3: #7b879b; --line: #e3e8f0; --bg: #f4f6fb; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Segoe UI", system-ui, Arial, sans-serif; color: var(--ink); background: var(--bg); font-size: 14px; }
+  header { padding: 22px 32px 6px; max-width: 1180px; margin: 0 auto; }
+  header h1 { margin: 0; font-size: 22px; }
+  header p { margin: 6px 0 0; color: var(--ink-2); line-height: 1.5; }
+  .opt { max-width: 1180px; margin: 22px auto; background: #fff; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+  .opt-h { display: flex; align-items: center; gap: 12px; padding: 14px 20px; border-bottom: 1px solid var(--line); background: #fbfcfe; flex-wrap: wrap; }
+  .letter { width: 32px; height: 32px; border-radius: 9px; background: var(--brand); color: #fff; display: grid; place-items: center; font-weight: 800; }
+  .opt-h h2 { margin: 0; font-size: 17px; }
+  .opt-h .tag { color: var(--ink-3); }
+  .opt-b { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 0; }
+  .stage { padding: 22px; background: #eef1f6; }
+  .notes { padding: 20px 22px; border-left: 1px solid var(--line); font-size: 13.5px; line-height: 1.55; }
+  .notes h4 { margin: 0 0 6px; font-size: 12px; text-transform: uppercase; letter-spacing: .05em; color: var(--ink-3); }
+  .notes ul { margin: 0 0 14px; padding-left: 18px; }
+  .notes .best { background: #e8f2fd; color: #173d69; border-radius: 8px; padding: 8px 10px; }
+  /* inbox row — how the email looks in the list before it's opened */
+  .inbox { background: #fff; border: 1px solid #d8dee8; border-radius: 10px; padding: 10px 14px; margin: 0 auto 14px; max-width: 640px; display: flex; gap: 12px; align-items: center; }
+  .inbox .av { width: 34px; height: 34px; border-radius: 50%; background: #060b14; color: #fff; display: grid; place-items: center; font-weight: 800; font-size: 12px; flex: 0 0 34px; }
+  .inbox .t { min-width: 0; flex: 1; }
+  .inbox .from { font-weight: 700; font-size: 13px; }
+  .inbox .subj { font-size: 13.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .inbox .prev { color: var(--ink-3); font-size: 12.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .inbox .time { color: var(--ink-3); font-size: 12px; }
+  .lbl { text-align: center; font-size: 11.5px; color: var(--ink-3); margin: 0 0 6px; text-transform: uppercase; letter-spacing: .05em; }
+  .compare { max-width: 1180px; margin: 22px auto 40px; background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 18px 22px; }
+  .compare table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+  .compare th, .compare td { border: 1px solid #d3dae5; padding: 8px 10px; text-align: left; }
+  .compare th { background: #e6ebf2; }
+  @media (max-width: 900px) { .opt-b { grid-template-columns: 1fr; } .notes { border-left: 0; border-top: 1px solid var(--line); } header, .opt, .compare { margin-left: 16px; margin-right: 16px; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Alert email — 5 template options</h1>
+  <p>Each option shows the same real edit (VC_242's name changed from “Kiranmai Battu” to “Kiranmai Batti”), first as it appears in the <b>inbox list</b>, then <b>opened</b>.
+  All are built the way email needs (tables + inline styles), so they look the same in Gmail, Outlook and on phones. Pick one — or mix parts (e.g. A's subject line with C's body).</p>
+</header>
+
+<!-- ============================ A ============================ -->
+<section class="opt">
+  <div class="opt-h"><span class="letter">A</span><h2>“What changed” card</h2><span class="tag">one big Before → After, readable in 3 seconds</span></div>
+  <div class="opt-b">
+    <div class="stage">
+      <p class="lbl">In the inbox</p>
+      <div class="inbox"><span class="av">VCT</span><div class="t"><div class="from">VCT Employee Portal</div><div class="subj">✏️ VC_242 Kiranmai Batti — Employee Name changed</div><div class="prev">“Kiranmai Battu” → “Kiranmai Batti” · saved by BHANU PRAKASH KAUTHARAPU at 11:36 AM</div></div><span class="time">11:36</span></div>
+      <p class="lbl">Opened</p>
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;margin:0 auto;background:#ffffff;border-radius:14px;overflow:hidden;font-family:Segoe UI,Arial,sans-serif;color:#0f1b2d;border:1px solid #dfe5ee">
+        <tr><td style="padding:22px 26px 6px">
+          <div style="font-size:12px;font-weight:700;letter-spacing:.06em;color:#006edb;text-transform:uppercase">Employee record updated</div>
+          <div style="font-size:22px;font-weight:800;margin-top:6px">Kiranmai Batti <span style="font-size:14px;font-weight:600;color:#7b879b">· VC_242</span></div>
+          <div style="font-size:14px;color:#44526a;margin-top:4px">1 field changed in the employee workbook</div>
+        </td></tr>
+        <tr><td style="padding:16px 26px">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #e3e8f0;border-radius:12px">
+            <tr><td colspan="3" style="padding:12px 16px 0;font-size:12px;font-weight:700;color:#7b879b;text-transform:uppercase;letter-spacing:.05em">Employee Name</td></tr>
+            <tr>
+              <td style="padding:10px 16px 16px;width:45%"><div style="font-size:11px;color:#be123c;font-weight:700">BEFORE</div><div style="font-size:17px;color:#be123c;text-decoration:line-through;margin-top:2px">Kiranmai Battu</div></td>
+              <td style="padding:10px 0 16px;width:10%;text-align:center;font-size:22px;color:#9aa6b8">→</td>
+              <td style="padding:10px 16px 16px;width:45%;background:#ecf8f0;border-radius:0 0 11px 0"><div style="font-size:11px;color:#15803d;font-weight:700">AFTER</div><div style="font-size:17px;color:#15803d;font-weight:800;margin-top:2px">Kiranmai Batti</div></td>
+            </tr>
+          </table>
+        </td></tr>
+        <tr><td style="padding:0 26px 18px;font-size:13px;color:#44526a">
+          👤 Saved by <b>BHANU PRAKASH KAUTHARAPU</b> &nbsp;·&nbsp; 🕒 5 Oct 2026, 11:36 AM &nbsp;·&nbsp; 📄 Copy of VCT_Sector_Operating_Model.xlsx
+          <div style="margin-top:8px;font-size:12px;color:#8a4b00;background:#fff6e6;border-radius:8px;padding:6px 10px">ⓘ This Excel name isn’t linked to an employee yet — add it to editors.json once.</div>
+        </td></tr>
+        <tr><td style="padding:0 26px 24px"><a href="#" style="display:inline-block;background:#006edb;color:#fff;text-decoration:none;font-weight:700;padding:11px 20px;border-radius:9px;font-size:14px">View in portal →</a></td></tr>
+      </table>
+    </div>
+    <div class="notes">
+      <h4>Why it works</h4>
+      <ul><li>Subject and preview already say <b>who</b> and <b>what</b>, so many people won't need to open it.</li><li>Before is struck through in red and After is bold in green.</li><li>The unknown editor becomes a small tip instead of a loud “— not identified —”.</li></ul>
+      <h4>Watch out</h4>
+      <ul><li>With 10+ changes it gets long (one card per field).</li></ul>
+      <div class="best"><b>Best for:</b> single or small edits — the most common case.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ B ============================ -->
+<section class="opt">
+  <div class="opt-h"><span class="letter">B</span><h2>Colour banner + change list</h2><span class="tag">status colour at a glance, compact rows</span></div>
+  <div class="opt-b">
+    <div class="stage">
+      <p class="lbl">In the inbox</p>
+      <div class="inbox"><span class="av">VCT</span><div class="t"><div class="from">VCT Employee Portal</div><div class="subj">[Edit] 1 change · Kiranmai Batti (VC_242) · 5 Oct 11:36</div><div class="prev">Employee Name: Kiranmai Battu → Kiranmai Batti</div></div><span class="time">11:36</span></div>
+      <p class="lbl">Opened</p>
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;margin:0 auto;background:#ffffff;border-radius:14px;overflow:hidden;font-family:Segoe UI,Arial,sans-serif;color:#0f1b2d;border:1px solid #dfe5ee">
+        <tr><td style="background:linear-gradient(90deg,#0b3d91,#006edb);background-color:#006edb;padding:18px 24px;color:#fff">
+          <table role="presentation" width="100%"><tr>
+            <td style="font-size:30px;width:46px">✏️</td>
+            <td><div style="font-size:18px;font-weight:800">1 change in the employee workbook</div><div style="font-size:13px;opacity:.85;margin-top:2px">5 Oct 2026 · 11:36 AM · by BHANU PRAKASH KAUTHARAPU</div></td>
+          </tr></table>
+        </td></tr>
+        <tr><td style="padding:18px 24px 6px">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="font-size:14px">
+            <tr>
+              <td style="padding:12px 0;border-bottom:1px solid #eef1f6;width:38%"><b>Kiranmai Batti</b><div style="font-size:12px;color:#7b879b">VC_242</div></td>
+              <td style="padding:12px 0;border-bottom:1px solid #eef1f6"><span style="display:inline-block;background:#e8f2fd;color:#0058b0;font-size:12px;font-weight:700;padding:2px 9px;border-radius:99px">Name</span><br>
+                <span style="color:#be123c;text-decoration:line-through">Kiranmai Battu</span> <span style="color:#9aa6b8">→</span> <b style="color:#15803d">Kiranmai Batti</b></td>
+            </tr>
+          </table>
+        </td></tr>
+        <tr><td style="padding:12px 24px 22px">
+          <table role="presentation" width="100%"><tr>
+            <td style="font-size:12px;color:#7b879b">File: Copy of VCT_Sector_Operating_Model.xlsx<br>Editor not linked to an employee (Excel name shown)</td>
+            <td align="right"><a href="#" style="display:inline-block;background:#006edb;color:#fff;text-decoration:none;font-weight:700;padding:10px 18px;border-radius:9px;font-size:13.5px">Open alerts</a></td>
+          </tr></table>
+        </td></tr>
+      </table>
+    </div>
+    <div class="notes">
+      <h4>Why it works</h4>
+      <ul><li>The banner colour can mean something: <span style="color:#006edb">blue = edit</span>, <span style="color:#be123c">red = rows removed</span>, <span style="color:#15803d">green = employee added</span>.</li><li>One row per employee, with each change as “old → new”, so it scales to 20–30 changes.</li></ul>
+      <h4>Watch out</h4>
+      <ul><li>Less “wow” than A for a single change.</li></ul>
+      <div class="best"><b>Best for:</b> a good all-rounder — clear for 1 change, still neat for many.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ C ============================ -->
+<section class="opt">
+  <div class="opt-h"><span class="letter">C</span><h2>Per-employee cards (digest)</h2><span class="tag">groups changes by person — shown here with 2 changes</span></div>
+  <div class="opt-b">
+    <div class="stage">
+      <p class="lbl">In the inbox</p>
+      <div class="inbox"><span class="av">VCT</span><div class="t"><div class="from">VCT Employee Portal</div><div class="subj">2 changes to 1 employee — Kiranmai Batti</div><div class="prev">Name and Project updated · saved by BHANU PRAKASH KAUTHARAPU</div></div><span class="time">11:36</span></div>
+      <p class="lbl">Opened</p>
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;margin:0 auto;background:#f6f8fb;border-radius:14px;overflow:hidden;font-family:Segoe UI,Arial,sans-serif;color:#0f1b2d;border:1px solid #dfe5ee">
+        <tr><td style="padding:20px 24px 8px">
+          <div style="font-size:19px;font-weight:800">Employee updates</div>
+          <div style="font-size:13px;color:#44526a;margin-top:3px">2 changes · 1 employee · 5 Oct 2026, 11:36 AM</div>
+        </td></tr>
+        <tr><td style="padding:10px 24px">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#fff;border:1px solid #dfe5ee;border-radius:12px">
+            <tr><td style="padding:14px 16px;border-bottom:1px solid #eef1f6">
+              <table role="presentation"><tr>
+                <td style="width:42px"><div style="width:36px;height:36px;border-radius:50%;background:#7c3aed;color:#fff;font-weight:800;font-size:13px;line-height:36px;text-align:center">KB</div></td>
+                <td><b style="font-size:15px">Kiranmai Batti</b><div style="font-size:12px;color:#7b879b">VC_242 · Trainee III · Application Software</div></td>
+              </tr></table>
+            </td></tr>
+            <tr><td style="padding:10px 16px 4px;font-size:13.5px">
+              <div style="padding:6px 0"><span style="color:#7b879b;display:inline-block;width:120px">Name</span><span style="color:#be123c;text-decoration:line-through">Kiranmai Battu</span> → <b style="color:#15803d">Kiranmai Batti</b></div>
+              <div style="padding:6px 0 10px"><span style="color:#7b879b;display:inline-block;width:120px">Project</span><span style="color:#be123c;text-decoration:line-through">AMD</span> → <b style="color:#15803d">ApexFlo</b></div>
+            </td></tr>
+          </table>
+        </td></tr>
+        <tr><td style="padding:8px 24px 22px;font-size:12.5px;color:#7b879b">Saved by BHANU PRAKASH KAUTHARAPU (Excel name) · <a href="#" style="color:#006edb;font-weight:700">See all alerts →</a></td></tr>
+      </table>
+    </div>
+    <div class="notes">
+      <h4>Why it works</h4>
+      <ul><li>HR thinks in people, not cells: each person gets one card with all of their changes.</li><li>The initials avatar and designation make it easy to tell who's who.</li><li>New employees and removed employees can be cards with a green or red edge.</li></ul>
+      <h4>Watch out</h4>
+      <ul><li>Takes a little more space for a single change.</li></ul>
+      <div class="best"><b>Best for:</b> bulk edits — e.g. someone updates 15 people's projects at once.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ D ============================ -->
+<section class="opt">
+  <div class="opt-h"><span class="letter">D</span><h2>Short notification</h2><span class="tag">3 lines + button, like a Slack / GitHub notice — ideal on phones</span></div>
+  <div class="opt-b">
+    <div class="stage">
+      <p class="lbl">In the inbox</p>
+      <div class="inbox"><span class="av">VCT</span><div class="t"><div class="from">VCT Employee Portal</div><div class="subj">Name changed: Kiranmai Battu → Kiranmai Batti</div><div class="prev">VC_242 · by BHANU PRAKASH KAUTHARAPU · 11:36 AM</div></div><span class="time">11:36</span></div>
+      <p class="lbl">Opened</p>
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;margin:0 auto;background:#ffffff;border-radius:12px;font-family:Segoe UI,Arial,sans-serif;color:#0f1b2d;border:1px solid #dfe5ee;border-left:5px solid #006edb">
+        <tr><td style="padding:20px 24px;font-size:15px;line-height:1.6">
+          <b>BHANU PRAKASH KAUTHARAPU</b> changed <b>Kiranmai Battu’s</b> (VC_242) name to <b style="color:#15803d">Kiranmai Batti</b>.
+          <div style="font-size:13px;color:#7b879b;margin-top:6px">5 Oct 2026, 11:36 AM · Copy of VCT_Sector_Operating_Model.xlsx</div>
+          <div style="margin-top:14px"><a href="#" style="display:inline-block;border:1.5px solid #006edb;color:#006edb;text-decoration:none;font-weight:700;padding:8px 16px;border-radius:8px;font-size:13.5px">View details</a></div>
+        </td></tr>
+      </table>
+    </div>
+    <div class="notes">
+      <h4>Why it works</h4>
+      <ul><li>Reads like a normal sentence, with no table to decode.</li><li>Smallest email and the fastest to read on a phone.</li></ul>
+      <h4>Watch out</h4>
+      <ul><li>For several changes it becomes a list of sentences; the full detail lives in the portal.</li></ul>
+      <div class="best"><b>Best for:</b> busy readers (CEO) who only need a heads-up.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ E ============================ -->
+<section class="opt">
+  <div class="opt-h"><span class="letter">E</span><h2>Summary strip + details</h2><span class="tag">numbers first, then the detail table — report style</span></div>
+  <div class="opt-b">
+    <div class="stage">
+      <p class="lbl">In the inbox</p>
+      <div class="inbox"><span class="av">VCT</span><div class="t"><div class="from">VCT Employee Portal</div><div class="subj">Workbook edit — 1 employee · 1 field · 0 added · 0 removed</div><div class="prev">Kiranmai Batti (VC_242): Employee Name updated</div></div><span class="time">11:36</span></div>
+      <p class="lbl">Opened</p>
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;margin:0 auto;background:#ffffff;border-radius:14px;overflow:hidden;font-family:Segoe UI,Arial,sans-serif;color:#0f1b2d;border:1px solid #dfe5ee">
+        <tr><td style="padding:18px 22px 4px"><div style="font-size:18px;font-weight:800">Employee workbook edited</div><div style="font-size:13px;color:#7b879b">5 Oct 2026, 11:36 AM · by BHANU PRAKASH KAUTHARAPU</div></td></tr>
+        <tr><td style="padding:12px 22px">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="6"><tr>
+            <td style="background:#e8f2fd;border-radius:10px;padding:10px;text-align:center"><div style="font-size:22px;font-weight:800;color:#006edb">1</div><div style="font-size:11px;color:#44526a">EMPLOYEE</div></td>
+            <td style="background:#fef3e0;border-radius:10px;padding:10px;text-align:center"><div style="font-size:22px;font-weight:800;color:#b45309">1</div><div style="font-size:11px;color:#44526a">FIELD CHANGED</div></td>
+            <td style="background:#e5f5ea;border-radius:10px;padding:10px;text-align:center"><div style="font-size:22px;font-weight:800;color:#15803d">0</div><div style="font-size:11px;color:#44526a">ADDED</div></td>
+            <td style="background:#fde9ee;border-radius:10px;padding:10px;text-align:center"><div style="font-size:22px;font-weight:800;color:#be123c">0</div><div style="font-size:11px;color:#44526a">REMOVED</div></td>
+          </tr></table>
+        </td></tr>
+        <tr><td style="padding:4px 22px 18px">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="font-size:13px;border:1px solid #c9d2de;border-collapse:collapse">
+            <tr style="background:#e6ebf2"><th align="left" style="padding:8px;border:1px solid #c9d2de">Employee</th><th align="left" style="padding:8px;border:1px solid #c9d2de">Field</th><th align="left" style="padding:8px;border:1px solid #c9d2de">Before</th><th align="left" style="padding:8px;border:1px solid #c9d2de">After</th></tr>
+            <tr><td style="padding:8px;border:1px solid #c9d2de"><b>Kiranmai Batti</b><br><span style="color:#7b879b">VC_242</span></td><td style="padding:8px;border:1px solid #c9d2de">Employee Name</td><td style="padding:8px;border:1px solid #c9d2de;background:#fff5f7;color:#be123c">Kiranmai Battu</td><td style="padding:8px;border:1px solid #c9d2de;background:#f2fbf5;color:#15803d;font-weight:700">Kiranmai Batti</td></tr>
+          </table>
+        </td></tr>
+        <tr><td style="padding:0 22px 22px"><a href="#" style="display:inline-block;background:#0f1b2d;color:#fff;text-decoration:none;font-weight:700;padding:10px 18px;border-radius:9px;font-size:13.5px">Open in portal</a></td></tr>
+      </table>
+    </div>
+    <div class="notes">
+      <h4>Why it works</h4>
+      <ul><li>The numbers strip answers “how big is this?” at a glance.</li><li>The table has strong gridlines, the same look as your Sector table.</li><li>Feels like a report, which suits forwarding to management.</li></ul>
+      <h4>Watch out</h4>
+      <ul><li>The busiest of the five for a tiny edit.</li></ul>
+      <div class="best"><b>Best for:</b> audit / compliance readers who want everything in one view.</div>
+    </div>
+  </div>
+</section>
+
+<section class="compare">
+  <h2 style="margin:0 0 10px;font-size:17px">Quick comparison</h2>
+  <table>
+    <tr><th>Option</th><th>Understand in</th><th>1 change</th><th>20+ changes</th><th>Phone</th><th>Suits</th></tr>
+    <tr><td><b>A</b> What-changed card</td><td>~3 s</td><td>★★★</td><td>★</td><td>★★★</td><td>Everyday edits</td></tr>
+    <tr><td><b>B</b> Banner + list</td><td>~5 s</td><td>★★★</td><td>★★★</td><td>★★★</td><td>All-rounder</td></tr>
+    <tr><td><b>C</b> Per-employee cards</td><td>~5 s</td><td>★★</td><td>★★★</td><td>★★</td><td>Bulk updates, HR</td></tr>
+    <tr><td><b>D</b> Short notification</td><td>~2 s</td><td>★★★</td><td>★</td><td>★★★</td><td>CEO heads-up</td></tr>
+    <tr><td><b>E</b> Summary + table</td><td>~6 s</td><td>★★</td><td>★★★</td><td>★★</td><td>Audit / reports</td></tr>
+  </table>
+  <p style="color:#44526a;margin:12px 0 0">A common combination: <b>A</b> when there's 1–3 changes and <b>C</b> automatically when there are more, with A's subject line always — the email picks the right layout by itself.</p>
+</section>
+</body>
+</html>

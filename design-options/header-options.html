@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page Header Options</title>
+<style>
+  :root { --brand: #006edb; --ink: #0f1b2d; --ink-2: #44526a; --ink-3: #7b879b; --line: #e3e8f0; --bg: #f4f6fb; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Segoe UI", system-ui, Arial, sans-serif; color: var(--ink); background: var(--bg); font-size: 14px; }
+  header.page { padding: 22px 32px 4px; max-width: 1240px; margin: 0 auto; }
+  header.page h1 { margin: 0; font-size: 22px; }
+  header.page p { margin: 6px 0 0; color: var(--ink-2); line-height: 1.5; }
+  .opt { max-width: 1240px; margin: 22px auto; background: #fff; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+  .opt-h { display: flex; align-items: center; gap: 12px; padding: 12px 18px; border-bottom: 1px solid var(--line); background: #fbfcfe; flex-wrap: wrap; }
+  .letter { width: 30px; height: 30px; border-radius: 8px; background: var(--brand); color: #fff; display: grid; place-items: center; font-weight: 800; }
+  .opt-h h2 { margin: 0; font-size: 16px; }
+  .opt-h .tag { color: var(--ink-3); }
+  .opt-f { padding: 10px 18px 14px; color: var(--ink-2); font-size: 13px; line-height: 1.5; border-top: 1px solid var(--line); }
+  .opt-f b { color: var(--ink); }
+
+  /* ---- shared header frame (same as the live portal's Pulse header) ---- */
+  .bar { display: flex; align-items: center; gap: 16px; padding: 14px 22px 16px 16px; color: #fff; min-height: 84px;
+    background: linear-gradient(100deg, #060b14 0%, #060b14 16%, #0a2f78 42%, #0a5bd8 72%, #2b8cff 100%); }
+  .logo { height: 46px; border-radius: 6px; background: #060b14; padding: 3px 6px; flex: 0 0 auto; }
+  .right { margin-left: auto; display: flex; gap: 10px; align-items: center; }
+  .badge { background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.28); border-radius: 99px; padding: 5px 12px; font-size: 12.5px; font-weight: 600; white-space: nowrap; }
+  .bell { width: 42px; height: 42px; border-radius: 10px; background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.28); display: grid; place-items: center; }
+  .bell svg { width: 20px; height: 20px; fill: #fff; }
+  .page-below { height: 26px; background: var(--bg); }
+  svg.i { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* A — current */
+  .A .back { height: 38px; padding: 0 14px; border-radius: 9px; background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.25); color: #fff; font-weight: 600; display: inline-flex; align-items: center; }
+  .A h3 { margin: 0; font-size: 22px; }
+  .A .cr { font-size: 13px; color: #c9dcff; margin-top: 2px; }
+
+  /* B — breadcrumb on top, round back arrow */
+  .B .rb { width: 38px; height: 38px; border-radius: 50%; background: #fff; color: #0a2f78; display: grid; place-items: center; box-shadow: 0 3px 10px rgba(0,0,0,.25); flex: 0 0 38px; }
+  .B .cr { font-size: 12px; color: #9fc2ff; letter-spacing: .02em; display: flex; gap: 6px; align-items: center; }
+  .B .cr a { color: #c9dcff; text-decoration: none; } .B .cr b { color: #fff; font-weight: 600; }
+  .B h3 { margin: 2px 0 0; font-size: 24px; font-weight: 800; letter-spacing: -.01em; }
+
+  /* C — one compact line: back icon · page icon · title · crumb pill */
+  .C .ib { width: 36px; height: 36px; border-radius: 10px; border: 1px solid rgba(255,255,255,.3); background: rgba(255,255,255,.1); display: grid; place-items: center; flex: 0 0 36px; }
+  .C .pi { width: 40px; height: 40px; border-radius: 11px; background: linear-gradient(135deg, #2b8cff, #7c3aed); display: grid; place-items: center; box-shadow: 0 4px 12px rgba(43,140,255,.45); flex: 0 0 40px; }
+  .C h3 { margin: 0; font-size: 22px; font-weight: 800; }
+  .C .pill { font-size: 12px; color: #dbe8ff; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2); border-radius: 99px; padding: 4px 11px; white-space: nowrap; }
+  .C .sep { width: 1px; height: 30px; background: rgba(255,255,255,.25); }
+
+  /* D — title + description, back as "‹ previous page" link */
+  .D .up { font-size: 12.5px; color: #9fc2ff; font-weight: 600; display: inline-flex; gap: 4px; align-items: center; }
+  .D h3 { margin: 1px 0 0; font-size: 23px; font-weight: 800; display: flex; align-items: center; gap: 10px; }
+  .D h3 .dot { width: 9px; height: 9px; border-radius: 50%; background: #4ade80; box-shadow: 0 0 0 4px rgba(74,222,128,.25); }
+  .D .desc { font-size: 13px; color: #c9dcff; margin-top: 2px; }
+
+  /* E — glass breadcrumb chips (back merged in) */
+  .E .chips { display: flex; align-items: center; gap: 6px; }
+  .E .chip { display: inline-flex; align-items: center; gap: 7px; height: 38px; padding: 0 14px; border-radius: 10px; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.22); font-weight: 600; font-size: 13.5px; color: #dbe8ff; }
+  .E .chip.cur { background: #fff; color: #0a2f78; font-size: 18px; font-weight: 800; border-color: #fff; box-shadow: 0 4px 14px rgba(0,0,0,.25); }
+  .E .chev { color: #9fc2ff; font-size: 18px; }
+
+  /* F — slim bar + light page-header card */
+  .F .bar { min-height: 64px; padding-top: 10px; padding-bottom: 10px; }
+  .F .logo { height: 38px; }
+  .F .ph { margin: -10px 22px 0; position: relative; background: #fff; border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 8px 24px rgba(15,27,45,.08); padding: 14px 18px; display: flex; align-items: center; gap: 14px; }
+  .F .pi { width: 44px; height: 44px; border-radius: 12px; background: #e8f2fd; color: var(--brand); display: grid; place-items: center; flex: 0 0 44px; }
+  .F .pi svg { width: 22px; height: 22px; }
+  .F .cr { font-size: 12px; color: var(--ink-3); } .F .cr b { color: var(--brand); font-weight: 600; }
+  .F h3 { margin: 1px 0 0; font-size: 21px; font-weight: 800; }
+  .F .desc { font-size: 13px; color: var(--ink-2); }
+  .F .bk { margin-left: auto; height: 38px; padding: 0 16px; border-radius: 9px; border: 1.5px solid var(--brand); color: var(--brand); font-weight: 700; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+  .F .page-below { height: 18px; }
+
+  .compare { max-width: 1240px; margin: 22px auto 40px; background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 18px 22px; }
+  .compare table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+  .compare th, .compare td { border: 1px solid #d3dae5; padding: 8px 10px; text-align: left; }
+  .compare th { background: #e6ebf2; }
+  @media (max-width: 900px) { .opt, .compare, header.page { margin-left: 16px; margin-right: 16px; } .badge { display: none; } }
+</style>
+</head>
+<body>
+<header class="page">
+  <h1>Page header — 6 layout options</h1>
+  <p>Shown for <b>Reporting Hierarchy</b> inside your portal's real header (logo, gradient, Excel-check badge and bell). The same layout would apply to every page. <b>A</b> is what you have now.</p>
+</header>
+
+<!-- shared bits -->
+<template id="right"><div class="right"><span class="badge">✓ Matches Excel · 443 checks</span><span class="bell"><svg viewBox="0 0 24 24"><path d="M12 22a2.5 2.5 0 0 0 2.45-2h-4.9A2.5 2.5 0 0 0 12 22Zm7-6V11a7 7 0 0 0-5.5-6.84V3.5a1.5 1.5 0 0 0-3 0v.66A7 7 0 0 0 5 11v5l-2 2v1h18v-1l-2-2Z"/></svg></span></div></template>
+
+<section class="opt A">
+  <div class="opt-h"><span class="letter">A</span><h2>Current</h2><span class="tag">for reference</span></div>
+  <div class="bar"><img class="logo" src="../portal/assets/vct-logo.png" alt=""><span class="back">← Back</span>
+    <div><h3>Reporting Hierarchy</h3><div class="cr">Home › Reporting Hierarchy</div></div><div data-right></div></div>
+  <div class="page-below"></div>
+  <div class="opt-f">The title and breadcrumb repeat the same words, and the boxy Back button looks heavy next to them.</div>
+</section>
+
+<section class="opt B">
+  <div class="opt-h"><span class="letter">B</span><h2>Breadcrumb on top, round back arrow</h2><span class="tag">classic app style — clean and familiar</span></div>
+  <div class="bar"><img class="logo" src="../portal/assets/vct-logo.png" alt="">
+    <span class="rb" title="Back"><svg class="i" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></span>
+    <div><div class="cr"><a href="#">⌂ Home</a> › <b>Reporting Hierarchy</b></div><h3>Reporting Hierarchy</h3></div><div data-right></div></div>
+  <div class="page-below"></div>
+  <div class="opt-f"><b>Feels like:</b> Microsoft 365 or Zoho. A small breadcrumb above a bold title, and a white round ← that's easy to hit. <b>Good for:</b> everyone; the safest upgrade.</div>
+</section>
+
+<section class="opt C">
+  <div class="opt-h"><span class="letter">C</span><h2>Compact single line with page icon</h2><span class="tag">saves height, modern dashboard look</span></div>
+  <div class="bar"><img class="logo" src="../portal/assets/vct-logo.png" alt="">
+    <span class="ib" title="Back"><svg class="i" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></span><span class="sep"></span>
+    <span class="pi"><svg class="i" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="5" rx="1"/><rect x="3" y="16" width="6" height="5" rx="1"/><rect x="15" y="16" width="6" height="5" rx="1"/><path d="M12 8v4M6 16v-4h12v4"/></svg></span>
+    <h3>Reporting Hierarchy</h3><span class="pill">Home / Reporting Hierarchy</span><div data-right></div></div>
+  <div class="page-below"></div>
+  <div class="opt-f"><b>Feels like:</b> modern SaaS dashboards. Each page gets its own coloured icon (an org chart here, a bell for Alerts, a grid for Sectors), and the header is one tidy line. <b>Good for:</b> a more “product” feel.</div>
+</section>
+
+<section class="opt D">
+  <div class="opt-h"><span class="letter">D</span><h2>Title + one-line description</h2><span class="tag">tells people what the page is for</span></div>
+  <div class="bar"><img class="logo" src="../portal/assets/vct-logo.png" alt="">
+    <div><span class="up"><svg class="i" viewBox="0 0 24 24" style="width:14px;height:14px"><path d="M15 18l-6-6 6-6"/></svg>Back to Dashboard</span>
+      <h3>Reporting Hierarchy <span class="dot" title="Live data"></span></h3>
+      <div class="desc">Who reports to whom · coloured by billing status</div></div><div data-right></div></div>
+  <div class="page-below"></div>
+  <div class="opt-f"><b>Feels like:</b> a guided tool. The back link names where it goes (“Back to Dashboard”), and a short description under the title helps new users. A green dot shows the data is live. <b>Good for:</b> HR and managers who don't use the portal daily.</div>
+</section>
+
+<section class="opt E">
+  <div class="opt-h"><span class="letter">E</span><h2>Glass breadcrumb chips</h2><span class="tag">navigation and title in one row of chips</span></div>
+  <div class="bar"><img class="logo" src="../portal/assets/vct-logo.png" alt="">
+    <div class="chips"><span class="chip"><svg class="i" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></span><span class="chip">⌂ Home</span><span class="chev">›</span>
+      <span class="chip cur"><svg class="i" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="5" rx="1"/><rect x="3" y="16" width="6" height="5" rx="1"/><rect x="15" y="16" width="6" height="5" rx="1"/><path d="M12 8v4M6 16v-4h12v4"/></svg>Reporting Hierarchy</span></div><div data-right></div></div>
+  <div class="page-below"></div>
+  <div class="opt-f"><b>Feels like:</b> modern file explorers. The path is a set of glass chips you can click, and the current page is a bright white chip, so you always know where you are. <b>Good for:</b> deeper pages (e.g. Home › Sectors › Product Development).</div>
+</section>
+
+<section class="opt F">
+  <div class="opt-h"><span class="letter">F</span><h2>Slim bar + floating page card</h2><span class="tag">light, airy — title moves out of the dark bar</span></div>
+  <div class="bar"><img class="logo" src="../portal/assets/vct-logo.png" alt=""><div data-right></div></div>
+  <div class="ph"><span class="pi"><svg class="i" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="5" rx="1"/><rect x="3" y="16" width="6" height="5" rx="1"/><rect x="15" y="16" width="6" height="5" rx="1"/><path d="M12 8v4M6 16v-4h12v4"/></svg></span>
+    <div><div class="cr">Home › <b>Reporting Hierarchy</b></div><h3>Reporting Hierarchy</h3><div class="desc">Who reports to whom · coloured by billing status</div></div>
+    <span class="bk"><svg class="i" viewBox="0 0 24 24" style="width:16px;height:16px"><path d="M15 18l-6-6 6-6"/></svg>Back</span></div>
+  <div class="page-below"></div>
+  <div class="opt-f"><b>Feels like:</b> Notion or Linear. The dark bar is thinner (logo, Excel check and bell only), and the page name sits on a white card that overlaps it. <b>Good for:</b> a lighter, more spacious look.</div>
+</section>
+
+<section class="compare">
+  <h2 style="margin:0 0 10px;font-size:17px">Quick comparison</h2>
+  <table>
+    <tr><th>Option</th><th>Look</th><th>Height</th><th>Shows page purpose</th><th>Back button</th></tr>
+    <tr><td><b>A</b> Current</td><td>Plain</td><td>Normal</td><td>—</td><td>Boxy “← Back”</td></tr>
+    <tr><td><b>B</b> Crumb on top</td><td>Classic, clean</td><td>Normal</td><td>—</td><td>White round arrow</td></tr>
+    <tr><td><b>C</b> Compact line</td><td>Modern dashboard</td><td>Shortest</td><td>Page icon</td><td>Small square arrow</td></tr>
+    <tr><td><b>D</b> Title + description</td><td>Friendly, guided</td><td>Normal</td><td>✓ one-line description</td><td>“‹ Back to Dashboard” link</td></tr>
+    <tr><td><b>E</b> Glass chips</td><td>Bold, navigational</td><td>Normal</td><td>Page icon</td><td>First chip</td></tr>
+    <tr><td><b>F</b> Floating card</td><td>Light, airy</td><td>Tallest</td><td>✓ icon + description</td><td>Outlined “Back” on the card</td></tr>
+  </table>
+  <p style="color:#44526a;margin:12px 0 0">Parts can be mixed — e.g. <b>B</b>'s layout with <b>D</b>'s description line.</p>
+</section>
+
+<script>
+  // put the same right-hand badge + bell into every header
+  const r = document.getElementById("right").innerHTML;
+  document.querySelectorAll("[data-right]").forEach((el) => { el.outerHTML = r; });
+</script>
+</body>
+</html>

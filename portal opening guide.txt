@@ -1,0 +1,52 @@
+Option 1: Live portal (recommended, updates by itself)
+Step 1 — Start it
+
+Open D:\Employee Management in File Explorer and double-click start-portal.bat.
+Or start it from a terminal (Command Prompt or PowerShell):
+
+cd "D:\Employee Management"
+python scripts\live_server.py
+Step 2 — Open it
+
+The browser opens http://localhost:8765/ automatically. If it doesn't, type that address yourself.
+The sidebar shows ● LIVE when it's working.
+Step 3 — Keep the black window open
+
+That window is the portal's engine. While it's open, every Excel save updates the portal within a few seconds, and edits appear under the 🔔 bell.
+Closing the window, or pressing Ctrl + C in it, stops the portal. The sidebar then shows ● OFFLINE.
+Step 4 — Next time
+
+Just double-click start-portal.bat again. Edits made while it was stopped are picked up when it starts.
+
+===============================================================================================================================================
+Option 2: Quick view without the live server
+Double-click portal\index.html. It shows the data from the last time the live server ran (● SNAPSHOT). It doesn't update by itself, and the 🔔 Alerts aren't available.
+
+To refresh that snapshot by hand after editing Excel, double-click update-data.bat, then refresh the browser.
+
+First-time setup on another computer
+Install Python 3, and tick "Add Python to PATH" during installation.
+Install the Excel reader once:
+
+pip install openpyxl
+Copy the whole D:\Employee Management folder.
+In portal.config.json, set "excelPath" to where the Excel file is on that computer.
+Node.js is only needed for the optional accuracy check (node scripts\verify.js).
+
+Settings (portal.config.json)
+Setting	What it does
+excelPath	Which Excel file the portal reads and watches
+port	The address port (default 8765 → http://localhost:8765/)
+host	"127.0.0.1" = only this PC. "0.0.0.0" = colleagues on the office network can open http://<this PC's IP>:8765/
+alerts.hrEmails, alerts.smtp	HR's email address and the sender account for edit alerts
+Restart the portal after changing settings: close the black window and run start-portal.bat again.
+
+If something goes wrong
+Problem	Fix
+"python is not recognized"	Python isn't installed or isn't on PATH. Reinstall it with "Add Python to PATH" ticked.
+No module named openpyxl	Run pip install openpyxl
+"Address already in use"	The portal is already running (check for another black window), or change port in the config
+Sidebar shows ● OFFLINE	The black window was closed. Run start-portal.bat again
+Changes in Excel don't appear	Make sure you saved the file, and that excelPath points to that same file
+Page looks old after an update	Press Ctrl + F5 in the browser
+The same steps are written up in README.md in the project folder.
