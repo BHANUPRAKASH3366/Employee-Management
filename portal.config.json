@@ -1,11 +1,13 @@
 {
-  "excelPath": "D:\\Employee Management\\Copy of VCT_Sector_Operating_Model.xlsx",
+  "excelPath": "D:\\Employee Management with AI Chatbot\\Copy of VCT_Sector_Operating_Model.xlsx",
   "host": "127.0.0.1",
   "port": 8765,
   "checkEverySeconds": 3,
   "alerts": {
     "enabled": true,
-    "hrEmails": ["kautharapubhanuprakash4@gmail.com"],
+    "hrEmails": [
+      "kautharapubhanuprakash4@gmail.com"
+    ],
     "groupChangesWithinSeconds": 20,
     "subjectPrefix": "Employee Management Portal Alert",
     "portalUrl": "http://localhost:8765/",
@@ -22,19 +24,46 @@
   },
   "attendance": {
     "enabled": true,
-    "hrmsPath": "E:\\DOWNLOADS\\HRMS File (1).xlsx",
+    "hrmsPath": "D:\\Employee Management with AI Chatbot\\HRMS File (1).xlsx",
     "sheet": "Early_Late Report(Decimal)",
     "minHoursPerDay": 8,
     "minDaysPerMonth": 20,
     "match": "any",
-    "hrEmails": ["kautharapubhanuprakash4@gmail.com"],
-    "ceoEmails": ["kautharapubhanuprakash4@gmail.com"],
-    "ccEmails": ["kautharapubhanuprakash4@gmail.com"],
+    "hrEmails": [
+      "chaithra.thota@vconnectech.in"
+    ],
+    "ceoEmails": [],
+    "ccEmails": [
+      "kautharapubhanuprakash4@gmail.com"
+    ],
     "subjectPrefix": "Vconnect Attendance Report",
     "monthlyReport": {
       "enabled": true,
       "day": 26,
       "time": "10:00"
+    }
+  },
+  "chatbot": {
+    "enabled": true,
+    "llm": {
+      "provider": "ollama",
+      "baseUrl": "http://192.168.1.95:11434",
+      "model": "qwen3.5:9b",
+      "temperature": 0.1,
+      "contextLength": 32768,
+      "think": false,
+      "timeoutSeconds": 180
+    },
+    "refreshSeconds": 60,
+    "sources": {
+      "employees": {
+        "path": "",
+        "url": ""
+      },
+      "hrms": {
+        "path": "",
+        "url": ""
+      }
     }
   }
 }

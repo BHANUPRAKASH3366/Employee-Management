@@ -13,7 +13,7 @@
   const LEVEL_COLORS = ["#0b3d91", "#1d5fc4", "#3b82f6", "#60a5fa", "#93c5fd", "#c7dcfb", "#94a3b8"];
   const ROUTES = {
     dashboard: "Dashboard", sectors: "Sectors", domains: "Domains", hierarchy: "Reporting Hierarchy", kpi: "KPI Framework",
-    changes: "Alerts",
+    chat: "AI Chatbot", changes: "Alerts",
   };
   const FILTER_KEYS = ["sector", "project", "domain", "level", "billing", "earning", "moved", "reportsTo", "q"];
   const FILTER_LABELS = { earning: "Earning", moved: "Moved", reportsTo: "Reports to", q: "Search" };
@@ -1077,6 +1077,134 @@
     if ($("kRole")) $("kRole").addEventListener("change", (e) => { state.kpiRole = e.target.value; render({ keepView: true }); });
   };
 
+  // ---------------------------------------------------------------- AI Chatbot (local LLM via /api/chat)
+  // The conversation lives here, so leaving the page and coming back keeps it.
+  const chat = { messages: [], busy: false, status: null };
+  const CHAT_SUGGESTIONS = [
+    "How many employees are billed?",
+    "How many people are in each sector?",
+    "Who reports to Srikanth Neelam?",
+    "Who is the project lead of LoRa?",
+    "How many employees were flagged in the attendance report?",
+    "Who had the fewest days present in August?",
+  ];
+
+  /** Small, safe markdown: escapes first, then bold, code, lists and tables. */
+  function chatMarkdown(text) {
+    const inline = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>").replace(/`([^`]+)`/g, "<code>$1</code>");
+    const lines = String(text || "").split(/\r?\n/);
+    const out = [];
+    for (let i = 0; i < lines.length; i++) {
+      const l = lines[i];
+      if (/^\s*\|.*\|\s*$/.test(l)) {
+        const rows = [];
+        while (i < lines.length && /^\s*\|.*\|\s*$/.test(lines[i])) rows.push(lines[i++]);
+        i--;
+        const cells = (r) => r.trim().replace(/^\||\|$/g, "").split("|").map((c) => c.trim());
+        const body = rows.filter((r) => !/^\s*\|[\s:|-]+\|\s*$/.test(r));
+        const [head, ...rest] = body;
+        out.push(`<div class="table-wrap"><table class="t"><thead><tr>${cells(head).map((c) => `<th>${inline(c)}</th>`).join("")}</tr></thead>` +
+          `<tbody>${rest.map((r) => `<tr>${cells(r).map((c) => `<td>${inline(c)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`);
+      } else if (/^\s*([-*•]|\d+\.)\s+/.test(l)) {
+        const ordered = /^\s*\d+\./.test(l);
+        const items = [];
+        while (i < lines.length && /^\s*([-*•]|\d+\.)\s+/.test(lines[i])) items.push(lines[i++].replace(/^\s*([-*•]|\d+\.)\s+/, ""));
+        i--;
+        out.push(`<${ordered ? "ol" : "ul"}>${items.map((x) => `<li>${inline(x)}</li>`).join("")}</${ordered ? "ol" : "ul"}>`);
+      } else if (/^\s*#{1,4}\s+/.test(l)) {
+        out.push(`<p><b>${inline(l.replace(/^\s*#+\s+/, ""))}</b></p>`);
+      } else if (l.trim()) {
+        out.push(`<p>${inline(l)}</p>`);
+      }
+    }
+    return out.join("");
+  }
+
+  views.chat = function (page) {
+    if (window.VCTDataSource.state.mode !== "live") {
+      page.innerHTML = `<div class="note-box">The AI Chatbot works when the portal runs live. Start it with <b>start-portal.bat</b> and open <b>http://localhost:8765/</b>.</div>`;
+      return;
+    }
+    page.innerHTML = `
+      <div class="card chat-card">
+        <div class="chat-head">
+          <div><h3>Vconnect assistant</h3><div class="sub" id="chatSources">Answers from the employee workbook and the HRMS attendance file.</div></div>
+          <span class="chat-model" id="chatModel">Checking model…</span>
+          <button class="btn-ghost" id="chatClear" title="Start a new conversation">Clear chat</button>
+        </div>
+        <div class="chat-log" id="chatLog" aria-live="polite"></div>
+        <form class="chat-input" id="chatForm" autocomplete="off">
+          <textarea id="chatQ" rows="1" maxlength="1000" placeholder="Ask about employees, sectors, projects, billing, KPIs or attendance…"></textarea>
+          <button class="btn" id="chatSend" type="submit">Send</button>
+        </form>
+        <div class="chat-foot">Runs on a local model on this computer. Only internal company questions are answered.</div>
+      </div>`;
+    drawChat();
+    const q = $("chatQ");
+    const grow = () => { q.style.height = "auto"; q.style.height = Math.min(q.scrollHeight, 160) + "px"; };
+    q.addEventListener("input", grow);
+    q.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); $("chatForm").requestSubmit(); }
+    });
+    $("chatForm").addEventListener("submit", (e) => { e.preventDefault(); sendChat(q.value); q.value = ""; grow(); });
+    $("chatClear").addEventListener("click", () => { if (!chat.busy) { chat.messages = []; drawChat(); q.focus(); } });
+    q.focus();
+    loadChatStatus();
+  };
+
+  function drawChat() {
+    const log = $("chatLog");
+    if (!log) return;
+    if (!chat.messages.length) {
+      log.innerHTML = `<div class="chat-empty"><p>Ask a question about Vconnect's people data. For example:</p>
+        <div class="chat-sugg">${CHAT_SUGGESTIONS.map((s) => `<button type="button" class="chip-btn" data-q="${esc(s)}">${esc(s)}</button>`).join("")}</div></div>`;
+      log.querySelectorAll("[data-q]").forEach((b) => b.addEventListener("click", () => sendChat(b.dataset.q)));
+    } else {
+      log.innerHTML = chat.messages.map((m) => m.role === "user"
+        ? `<div class="msg me"><div class="bubble">${esc(m.content).replace(/\n/g, "<br>")}</div></div>`
+        : `<div class="msg bot${m.blocked ? " blocked" : ""}${m.error ? " err" : ""}"><div class="bubble">${chatMarkdown(m.content)}</div></div>`).join("") +
+        (chat.busy ? `<div class="msg bot"><div class="bubble typing"><span></span><span></span><span></span></div></div>` : "");
+    }
+    log.scrollTop = log.scrollHeight;
+    if ($("chatSend")) $("chatSend").disabled = chat.busy;
+  }
+
+  async function sendChat(text) {
+    text = String(text || "").trim();
+    if (!text || chat.busy) return;
+    const history = chat.messages.filter((m) => !m.error).slice(-8).map((m) => ({ role: m.role, content: m.content }));
+    chat.messages.push({ role: "user", content: text });
+    chat.busy = true;
+    drawChat();
+    try {
+      const res = await fetch("api/chat", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ question: text, history }) });
+      const out = await res.json();
+      chat.messages.push({ role: "assistant", content: out.reply || "No answer.", blocked: !!out.blocked, error: !!out.error });
+    } catch (e) {
+      chat.messages.push({ role: "assistant", content: "Couldn't reach the portal server. Is start-portal.bat still running?", error: true });
+    }
+    chat.busy = false;
+    drawChat();
+    if ($("chatQ")) $("chatQ").focus();
+  }
+
+  async function loadChatStatus() {
+    try {
+      const st = await (await fetch("api/chat/status", { cache: "no-store" })).json();
+      chat.status = st;
+      const el = $("chatModel");
+      if (!el) return;
+      const m = st.model || {};
+      const ok = st.enabled && m.reachable && m.available;
+      el.className = "chat-model " + (ok ? "ok" : "bad");
+      el.textContent = !st.enabled ? "Chatbot turned off" : !m.reachable ? `● Model offline · start Ollama` : !m.available ? `● ${m.model} not installed` : `● ${m.model} · ready`;
+      el.title = ok ? `Local model ${m.model} via ${m.provider}` : (m.error || "Run: ollama pull " + (m.model || "qwen3.5:9b"));
+      const s = st.sources || {};
+      const d = (x, label) => !x ? "" : `${label}: ${x.error ? `<span class="warn-t">${esc(x.error)}</span>` : `${x.rows} rows · ${x.live ? "live link" : "local file"}`}`;
+      if ($("chatSources")) $("chatSources").innerHTML = [d(s.employees, "Employee workbook"), d(s.hrms, "HRMS attendance")].filter(Boolean).join(" · ");
+    } catch (e) { /* the chat still works; the status pill just stays as is */ }
+  }
+
 
   // ---- Alerts (edits to the live workbook, emailed to HR)
   let changesTimer = null;
@@ -1620,6 +1748,7 @@
     domains: '<path d="M12 2l9 10-9 10-9-10z"/>',
     hierarchy: '<rect x="9" y="3" width="6" height="5" rx="1"/><rect x="3" y="16" width="6" height="5" rx="1"/><rect x="15" y="16" width="6" height="5" rx="1"/><path d="M12 8v4M6 16v-4h12v4"/>',
     kpi: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/>',
+    chat: '<path d="M4 5h16v11H9l-5 4z"/><path d="M8 10h8M8 13h5"/>',
     changes: '<path d="M18 16V11a6 6 0 1 0-12 0v5l-2 2h16z"/><path d="M10 20a2 2 0 0 0 4 0"/>',
   };
   const crumbIcon = (k) => `<svg class="ci" viewBox="0 0 24 24" aria-hidden="true">${CRUMB_ICONS[k] || CRUMB_ICONS.dashboard}</svg>`;
@@ -1795,7 +1924,7 @@
         DATA = ev.data;
         renderShellInfo();
         Chart.defaults.animation.duration = 0;
-        if (state.route !== "changes") render({ keepView: true });
+        if (state.route !== "changes" && state.route !== "chat") render({ keepView: true });
         const what = changeSummary(prev, DATA);
         const by = DATA.meta && DATA.meta.lastModifiedBy;
         toast(`<b>Updated from Excel</b> · ${new Date().toLocaleTimeString()}${by ? ` · saved by ${esc(by)}` : ""}${what ? `<br>${esc(what)}` : ""}`);

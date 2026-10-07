@@ -66,6 +66,17 @@ The **Dashboard** has every number, chart and filter. Each other menu shows only
 
 Filters for sector, project, domain, level, billing status and search apply on every page. They're stored in the URL, so any view can be bookmarked or shared.
 
+## AI Chatbot
+The **AI Chatbot** page (below KPI Framework) answers questions about the employee workbook and the HRMS attendance file, using the **qwen3.5:9b** model running locally in **Ollama**. No data leaves this computer.
+
+- **Setup (once):** install Ollama, then run `ollama pull qwen3.5:9b`. Ollama must be running while you use the chatbot. The pill at the top of the chat shows `● qwen3.5:9b · ready` when it is working.
+- **Accuracy:** the model never reads the spreadsheets itself. It calls lookup tools (`scripts/chatbot.py`) that compute counts and lists from the parsed data, and then puts the result into words.
+- **Guardrails:** only internal company topics are answered. Maths, coding, trivia, general knowledge and attempts to override the rules get a fixed reply: *I'm the Vconnect assistant — I can only help with internal company elements like Employee details, HRMS, Projects.*
+- **Answer mode:** `"mode": "tools"` (default) or `"context"`. In `"context"` mode, all the Excel data (~124k tokens) goes into the model's prompt and the model reads it directly. In testing it was much less accurate on counts and lists (13/24 correct, against 24/24 for `"tools"`), and slower. `python scripts/test_chatbot.py compare` runs both modes side by side.
+- **Settings:** see `chatbot` in `portal.config.json` (model, Ollama address, `"enabled"`). To use an OpenAI-compatible server such as LM Studio instead, set `"provider": "openai"` and its `baseUrl`.
+- **Live Excel links:** by default the chatbot reads the same files as the portal (`excelPath`, `attendance.hrmsPath`). To read live sheets instead, put a link in `chatbot.sources.employees.url` / `chatbot.sources.hrms.url`. Direct `.xlsx` links, Google Sheets share links and OneDrive/SharePoint share links work. The link is downloaded again every `refreshSeconds` (default 60). If a link needs sign-in, put the token in an environment variable and give its name as `"tokenEnv"`.
+- **Test:** `python scripts/test_chatbot.py` asks 21 data questions, checking each answer against numbers worked out directly from the workbooks, plus 16 guardrail checks.
+
 ## Counting rules (same as the workbook)
 - **Head count** counts each person once, by primary sector and project.
 - **Project counts** are assignments. A person on two projects counts in both.

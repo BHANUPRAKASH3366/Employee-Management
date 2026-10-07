@@ -3,11 +3,11 @@ window.VCT_DATA = {
  "meta": {
   "company": "VConnecTech Systems",
   "source": "Copy of VCT_Sector_Operating_Model.xlsx",
-  "sourceModified": "2026-10-06T10:53:58",
+  "sourceModified": "2026-10-06T03:08:10",
   "lastModifiedBy": "BHANU PRAKASH KAUTHARAPU",
-  "generatedAt": "2026-10-06T10:54:03",
+  "generatedAt": "2026-10-07T10:11:02",
   "mode": "live",
-  "version": 2
+  "version": 1
  },
  "sectors": [
   {

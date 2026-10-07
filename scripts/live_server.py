@@ -15,6 +15,8 @@ Endpoints:
     /api/data     the full portal data (same shape as portal/data/vct-data.js)
     /api/attendance          attendance report from the HRMS file + email history
     /api/attendance/send     (POST) email the current attendance report again
+    /api/chat/status         AI Chatbot: local model + data sources
+    /api/chat                (POST) {"question", "history"} → {"reply", ...}  (scripts/chatbot.py)
 """
 import json
 import shutil
@@ -36,6 +38,10 @@ try:  # attendance alerts (scripts/attendance.py) — optional; the portal runs 
     import attendance  # noqa: E402
 except Exception:  # pragma: no cover
     attendance = None
+try:  # AI Chatbot (scripts/chatbot.py) — optional; the portal runs without it
+    import chatbot  # noqa: E402
+except Exception:  # pragma: no cover
+    chatbot = None
 
 ROOT = build_data.ROOT
 PORTAL = ROOT / "portal"
@@ -147,6 +153,7 @@ class LiveData:
 class Handler(SimpleHTTPRequestHandler):
     live = None
     attendance = None  # attendance.AttendanceWatcher, when available
+    chat = None  # chatbot.ChatService, when available
 
     def log_message(self, *args):
         pass
@@ -177,6 +184,9 @@ class Handler(SimpleHTTPRequestHandler):
         if route == "/api/attendance":
             body = self.attendance.status() if self.attendance else {"error": "Attendance alerts are not available."}
             return self._send(json.dumps(body, ensure_ascii=False, default=str).encode("utf-8"), "application/json; charset=utf-8")
+        if route == "/api/chat/status":
+            body = self.chat.status() if self.chat else {"enabled": False, "error": "The AI Chatbot is not available."}
+            return self._send(json.dumps(body, ensure_ascii=False, default=str).encode("utf-8"), "application/json; charset=utf-8")
         if route == "/api/data":
             body, status = self.live.snapshot()
             if not status["version"]:
@@ -192,6 +202,17 @@ class Handler(SimpleHTTPRequestHandler):
             except Exception as e:
                 res = {"status": "failed", "detail": f"Email failed: {e}"}
             return self._send(json.dumps(res, default=str).encode("utf-8"), "application/json; charset=utf-8")
+        if route == "/api/chat":
+            if not self.chat:
+                res = {"reply": "The AI Chatbot is not available on this server.", "error": True}
+            else:
+                try:
+                    n = int(self.headers.get("Content-Length") or 0)
+                    body = json.loads(self.rfile.read(min(n, 200000)) or b"{}")
+                    res = self.chat.ask(str(body.get("question") or ""), body.get("history") or [])
+                except Exception as e:
+                    res = {"reply": f"Sorry, something went wrong: {e}", "error": True}
+            return self._send(json.dumps(res, ensure_ascii=False, default=str).encode("utf-8"), "application/json; charset=utf-8")
         if route == "/api/attendance/settings" and self.attendance:
             # Changing who gets emails is only allowed from this computer, unless "allowRemoteSettings" is true.
             local = self.client_address[0] in ("127.0.0.1", "::1", "::ffff:127.0.0.1")
@@ -234,6 +255,14 @@ def main():
             log("Attendance alerts: watching " + (str(att.path()) if att.path() else "— no HRMS file set (attendance.hrmsPath)"))
         except Exception as e:
             log(f"Attendance alerts not started: {e}")
+
+    if chatbot:
+        try:
+            Handler.chat = chatbot.ChatService(log=log)
+            llm = Handler.chat.bot.cfg["llm"]
+            log(f"AI Chatbot: {llm['model']} via {llm['provider']} at {llm['baseUrl']}")
+        except Exception as e:
+            log(f"AI Chatbot not started: {e}")
 
     Handler.live = live
     host, port = cfg.get("host", "127.0.0.1"), int(cfg.get("port", 8765))
